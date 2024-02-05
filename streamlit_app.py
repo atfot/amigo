@@ -23,5 +23,5 @@ with col3:
         st.session_state.logged_in = True
         st.success("Welcome to Amigo!")
         sleep(0.5)
-        st.switch_page("pages/page2.py")
+        st.switch_page("pages/signin.py")
         
