@@ -4,7 +4,7 @@ from navigation import make_sidebar
 
 make_sidebar()
 user_name='Dita'
-openapi_key='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'
+openapi_key='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'
 
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "What's your pain point?"}]
