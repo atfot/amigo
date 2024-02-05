@@ -13,7 +13,7 @@ for msg in st.session_state.messages:
     st.chat_message(msg["role"]).write(msg["content"])
 
 if prompt := st.chat_input():
-    client = OpenAI(api_key=openapi_key)
+    client = OpenAI(api_key=st.secrets['api_key'])
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt) #user message
     response = client.chat.completions.create(
