@@ -36,6 +36,13 @@ with st.chat_message("assistant").form("Sign up Form"):
         if x==6:
             col1,col2,col3=st.columns([3,6,1])
             with col2:
+                st.write(
+    """
+# "Okay! We saved your form."
+This is your signup information.
+
+Welcome to Amigo
+""")
                 st.write("Okay! We saved your form.")
                 st.write("This is your signup information.")
                 st.write("Welcome to Amigo")
