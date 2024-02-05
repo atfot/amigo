@@ -3,7 +3,7 @@ import pandas as pd
 
 st.write(
     """
-# Okay! Nice to meet you sir. Please fill in the blanks for sign up.
+Okay! Nice to meet you sir. Please fill in the blanks for sign up.
 
 """
 )
