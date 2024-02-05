@@ -3,7 +3,7 @@ import streamlit as st
 from navigation import make_sidebar
 
 make_sidebar()
-user_name='현규씨'
+user_name='Aryani'
 
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "What's your pain point?"}]
@@ -20,7 +20,7 @@ if prompt := st.chat_input():
   messages=[
     {
       "role": "system",
-      "content": "You are a helpful korean counselor that serves single korean person. you should reply like an actual human."
+      "content": "You are a helpful american counselor that serves one american person. you should reply like an actual human."
     },
     {
       "role": "user",
