@@ -8,7 +8,7 @@ st.write("Please login (username `test`, password `test`).")
 username = st.text_input("Username")
 password = st.text_input("Password", type="password")
 
-col1, col2, col3 = st.columns([2,6.6,1.4])
+col1, col2, col3 = st.columns([2,6.55,1.45])
 with col1:
     if st.button("Log in", type="primary"):
         if username == "test" and password == "test":
