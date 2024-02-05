@@ -38,15 +38,13 @@ with st.chat_message("assistant").form("Sign up Form"):
             with col2:
                 st.write(
     """
-# "Okay! We saved your form."
-This is your signup information.
 
-Welcome to Amigo
+    # "Okay! We saved your form."
+    This is your signup information.
+    
+    Welcome to Amigo
+
 """)
-                st.write("Okay! We saved your form.")
-                st.write("This is your signup information.")
-                st.write("Welcome to Amigo")
-                st.title('')
             df = pd.DataFrame({
                 "User Name": [username],
                 "Password": [password],
