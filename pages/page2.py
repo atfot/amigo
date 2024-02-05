@@ -4,6 +4,7 @@ from navigation import make_sidebar
 
 make_sidebar()
 user_name='Dita'
+openapi_key='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'
 
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "What's your pain point?"}]
@@ -12,7 +13,7 @@ for msg in st.session_state.messages:
     st.chat_message(msg["role"]).write(msg["content"])
 
 if prompt := st.chat_input():
-    client = OpenAI(api_key='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')
+    client = OpenAI(api_key=openapi_key)
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt) #user message
     response = client.chat.completions.create(
