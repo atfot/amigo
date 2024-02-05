@@ -21,12 +21,12 @@ if prompt := st.chat_input():
   messages=[
     {
       "role": "system",
-      "content": "You are a helpful american counselor that serves one american person. you should reply like an actual human."
+      "content": "You are a helpful american counselor that serves one american person. you should reply like an actual human. You should use username which is given to you if necessary, and you should reply as short as possible."
     },
     {
       "role": "user",
       "content": f"""
-      user-name : {user_name}
+      username : {user_name}
       Question : {st.session_state.messages}
       """
     }
