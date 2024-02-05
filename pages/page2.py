@@ -24,9 +24,7 @@ if prompt := st.chat_input():
     },
     {
       "role": "user",
-      "content": f"""
-      Question : {st.session_state.messages}
-      """
+      "content": f"{st.session_state.messages}"
     }
   ],
   temperature=1,
