@@ -39,7 +39,7 @@ with st.chat_message("assistant").form("Sign up Form"):
                 st.write(
     """
 
-    # "Okay! We saved your form."
+    "Okay! We saved your form."
     This is your signup information.
     
     Welcome to Amigo
