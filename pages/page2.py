@@ -138,7 +138,7 @@ Your goal is to provide in-depth, expert, and accurate analysis and opinions acr
     },
     {
       "role": "user",
-      "content": f"{st.session_state.messages}"
+      "content": f"{msg}"
     }
   ],
   temperature=1,
