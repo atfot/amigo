@@ -106,7 +106,7 @@ Your goal is to make personal relationship and provide comforting words. Let's g
 .
 .
 '''
-4. Respond with this template:
+4. Respond using this template:
 '''
 **Empathizing sentences**: [Your pick of sentences that resonate with the other person in this paragraph]
 
