@@ -1,7 +1,6 @@
 from openai import OpenAI
 import streamlit as st
 from navigation import make_sidebar
-import re
 
 make_sidebar()
 user_name='Dita'
@@ -94,10 +93,11 @@ Your goal is to make personal relationship and provide comforting words. Let's g
   max_tokens=512,
   top_p=1,
   frequency_penalty=0,
-  presence_penalty=0
+  presence_penalty=0,
+  stream=True
 )
     msg = response.choices[0].message.content
     start = msg.find("**Your Response**: ") + len("**Your Response**: ")
-    msg = msg[start:]
+    msg = st.write_stream(msg[start:])
     st.session_state.messages.append({"role": "assistant", "content": msg})
     st.chat_message("assistant").write(msg) #bot response
