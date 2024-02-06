@@ -114,7 +114,7 @@ Your goal is to provide in-depth, expert, and accurate analysis and opinions acr
 
 **Summarized Sentence**: [Summarization into 1 sentence of Empathizing sentences]
 
-**Friendly Translation**: [Friendly translation for the conversation using 1~3 sentences] 
+**Friendly Translation**: [Friendly translation for the conversation using 1~3 sentences, which includes a bit of curiosity] 
 '''
 # Information about the person you're responding to in 'Friendly Translation' 
 - Name : {st.secrets['user_name']}
