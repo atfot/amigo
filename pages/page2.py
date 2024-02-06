@@ -114,6 +114,14 @@ Your goal is to make personal relationship and provide comforting words. Let's g
 
 **Friendly Translation**: [Friendly translation for the conversation] 
 '''
+**Remember**: You can use this information in **Friendly Translation** if it is absolutely necessary, but don't use it easily.
+# Information about the person you're responding to in 'Friendly Translation' 
+- Name : {st.secrets['user_name']}
+- Gender : {st.secrets['user_gender']}
+- Age : {st.secrets['age']}
+- Live in Indonesia. 
+- Have a high IQ, and prefer expert terms
+- Needs a warm-hearted friend
 """
     },
     {
