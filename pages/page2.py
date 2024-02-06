@@ -115,6 +115,7 @@ Your goal is to make personal relationship and provide comforting words. Let's g
 **Friendly Translation**: [Friendly translation for the conversation using 1~3 sentences] 
 '''
 # Information about the person you're responding to in 'Friendly Translation' 
+**Important**: Do not use this information if you can respond without using this information.
 - Name : {st.secrets['user_name']}
 - Gender : {st.secrets['user_gender']}
 - Age : {st.secrets['age']}
