@@ -3,9 +3,6 @@ import streamlit as st
 from navigation import make_sidebar
 
 make_sidebar()
-user_name='Dita'
-user_gender='Female'
-age='27'
 
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "I'm here to listen to your mental problems. Can you tell me yours?"}]
@@ -16,7 +13,7 @@ for msg in st.session_state.messages:
 if prompt := st.chat_input():
     client = OpenAI(api_key=st.secrets['api_key'])
     st.session_state.messages.append({"role": "user", "content": prompt})
-    st.chat_message("user").write(msg)
+    st.chat_message("user").write(prompt)
     response = client.chat.completions.create(
   model="gpt-3.5-turbo-16k",
   messages=[
