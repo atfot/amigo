@@ -6,9 +6,10 @@ st.write(
 # Okay! Nice to meet you sir. 
 # Please fill in the blanks for sign up.
 
-Jess hyung this part is signin form. But I haven't finished yet.
+Jess hyung this part is signin form. 
+But I haven't finished yet.
 I was thinking which database to save my user's info for this - any big company's SQL Server, or just Google Spreadsheets.
-and this page needs some buttons to perfect it.
+And this page needs some buttons to perfect it.
 """
 )
 x=0
