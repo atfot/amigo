@@ -97,7 +97,7 @@ Your goal is to provide in-depth, expert, and accurate analysis and opinions acr
       "content": f"""
 1. Pick only sentences that showing empathy with the other person in this paragraph. You need to separate each sentences by using ", ".
 2. Summarize those sentences into 1 sentence.
-3. Change this 1 sentence into more friendly sentence that can be used in the part of conversation, like this:
+3. Change this 1 sentence into more warm-hearted, friendly sentence that can be used in the part of conversation, like this:
 '''
 [user's reply : I feel so depressed now.]
 [your response : Can you tell me what happened to you?] 
@@ -114,7 +114,7 @@ Your goal is to provide in-depth, expert, and accurate analysis and opinions acr
 
 **Summarized Sentence**: [Summarization into 1 sentence of Empathizing sentences]
 
-**Friendly Translation**: [Friendly translation for the conversation using 1~3 sentences, which includes a bit of curiosity] 
+**Friendly Translation**: [Friendly and warm-hearted translation for the conversation using 1~3 sentences] 
 '''
 # Information about the person you're responding to in 'Friendly Translation' 
 - Name : {st.secrets['user_name']}
