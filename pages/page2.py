@@ -135,8 +135,7 @@ Your goal is to make personal relationship and provide comforting words. Let's g
   presence_penalty=0
 )
       msg = response.choices[0].message.content
-      start = msg.find("**Friendly Translation**: ") + len("**Friendly Translation**: ")
-      msg = msg[start:]
+      
       st.session_state.messages.append({"role": "assistant", "content": msg})
       st.chat_message("assistant").write(msg)
     
