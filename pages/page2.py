@@ -95,6 +95,9 @@ Your goal is to provide in-depth, expert, and accurate analysis and opinions acr
     {
       "role": "system",
       "content": f"""
+      # Primary Assistant Guidance
+      Your goal is to provide friendly, warm-hearted but thoughtful response. Let's go step-by-step:
+
 1. Pick only sentences that showing empathy with the other person in this paragraph. You need to separate each sentences by using ", ".
 2. Summarize those sentences into 1 sentence.
 3. Change this 1 sentence into more warm-hearted, friendly sentence that can be used in the part of conversation, like this:
@@ -127,7 +130,7 @@ Your goal is to provide in-depth, expert, and accurate analysis and opinions acr
 """
     },
     {
-      "role": "user",
+      "role": "assistant",
       "content": f"{st.session_state.messages}"
     }
   ],
