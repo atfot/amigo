@@ -9,7 +9,7 @@ user_gender='Female'
 age='27'
 
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "assistant", "content": "고민이 있으신가요? 전부 제게 말해주세요."}]
+    st.session_state["messages"] = [{"role": "assistant", "content": "I'm here to listen to your mental problems. Can you tell me yours?"}]
 
 for msg in st.session_state.messages:
     st.chat_message(msg["role"]).write(msg["content"])
