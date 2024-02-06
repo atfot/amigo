@@ -10,13 +10,15 @@ age='27'
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "I'm here to listen to your mental problems. Can you tell me yours?"}]
 
-for msg in st.session_state.messages:
-    st.chat_message(msg["role"]).write(msg["content"])
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
 
 if prompt := st.chat_input():
     client = OpenAI(api_key=st.secrets['api_key'])
     st.session_state.messages.append({"role": "user", "content": prompt})
-    st.chat_message("user").write(prompt) #user message
+    with st.chat_message("user"):
+        st.markdown(prompt)
     response = client.chat.completions.create(
   model="gpt-3.5-turbo-16k",
   messages=[
@@ -100,4 +102,3 @@ Your goal is to make personal relationship and provide comforting words. Let's g
     start = msg.find("**Your Response**: ") + len("**Your Response**: ")
     msg = st.write_stream(msg[start:])
     st.session_state.messages.append({"role": "assistant", "content": msg})
-    st.chat_message("assistant").write(msg) #bot response
