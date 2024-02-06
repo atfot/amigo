@@ -78,7 +78,9 @@ Your goal is to make personal relationship and provide comforting words. Let's g
 **Your Response**: [your response]
 '''
 
+**Remember: Compare your past answers to your present answers, and be careful not to overlap them.**
 **Remember: (questions in parentheses) don't use an expert**
+
 ```"""
     },
     {
