@@ -62,7 +62,9 @@ Your goal is to provide in-depth, expert, and accurate analysis and opinions acr
 
 '''
 **Expert**: [your assumed expert role]
+
 **Objective**: [single concise sentence describing your current objective]
+
 **Assumptions**: [your assumptions about my question, intent, and context] 
 
 [your response]
