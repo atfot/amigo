@@ -100,5 +100,5 @@ Your goal is to make personal relationship and provide comforting words. Let's g
 )
     msg = response.choices[0].message.content
     start = msg.find("**Your Response**: ") + len("**Your Response**: ")
-    msg = st.write_stream(msg[start:])
+    msg = msg[start:]
     st.session_state.messages.append({"role": "assistant", "content": msg})
