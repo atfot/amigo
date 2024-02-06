@@ -112,7 +112,7 @@ Your goal is to make personal relationship and provide comforting words. Let's g
 
 **Summarized Sentence**: [Summarization into 1 sentence of Empathizing sentences]
 
-**Friendly Translation**: [Friendly translation for the conversation] 
+**Friendly Translation**: [Friendly translation for the conversation using 1~3 sentences] 
 '''
 # Information about the person you're responding to in 'Friendly Translation' 
 - Name : {st.secrets['user_name']}
