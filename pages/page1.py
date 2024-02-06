@@ -5,13 +5,10 @@ make_sidebar()
 
 st.write(
     """
-# 🔓 Secret Company Stuff
+# Your problem solving rate
 
-This is a secret page that only logged-in users can see.
-
-Don't tell anyone.
-
-For real.
+This part is also not finished.
+Actually I was trying my best to perfect my AI chatbot.
 
 """
 )
