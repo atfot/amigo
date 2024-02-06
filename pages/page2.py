@@ -149,7 +149,8 @@ Your goal is to provide in-depth, expert, and accurate analysis and opinions acr
 )
       msg = response.choices[0].message.content
       start = msg.find("**Friendly Translation**: ") + len("**Friendly Translation**: ")
-      msg = msg[start:]
-      st.session_state.messages.append({"role": "assistant", "content": msg})
-      st.chat_message("assistant").write(msg)
+      new_msg = msg[start:]
+      st.session_state.messages.append({"role": "assistant", "content": new_msg})
+      st.chat_message("assistant").write(new_msg)
+      st.write(msg)
     
