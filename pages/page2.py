@@ -3,9 +3,9 @@ import streamlit as st
 from navigation import make_sidebar
 
 make_sidebar()
-user_name='Dita'
-user_gender='Female'
-age='27'
+user_name='Jess'
+user_gender='Male'
+age='29'
 
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "Got any worries on your mind? Tell us all about it."}]
