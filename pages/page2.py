@@ -3,12 +3,12 @@ import streamlit as st
 from navigation import make_sidebar
 
 make_sidebar()
-user_name='Jess'
+user_name='현규씨'
 user_gender='Male'
-age='29'
+age='31'
 
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "assistant", "content": "Got any worries on your mind? Tell us all about it."}]
+    st.session_state["messages"] = [{"role": "assistant", "content": "고민이 있으신가요? 전부 제게 말해주세요."}]
 
 for msg in st.session_state.messages:
     st.chat_message(msg["role"]).write(msg["content"])
@@ -22,7 +22,7 @@ if prompt := st.chat_input():
   messages=[
     {
       "role": "system",
-      "content": f"You are a helpful american counselor that serves one american client. The client's name is {user_name}, currently {age} years old, and {user_gender}. The prime goal is doing conversation, not giving informations. You should reply like an actual human. DO NOT USE CLIENT'S NAME AS YOUR FIRST WORD OF YOUR REPLY. STARTING SENTENCE SHOULD BE COMPLETELY DIFFERENT FROM YOUR PREVIOUS REPLY, INCLUDING EVERY SINGLE WORDS. You should focus on empathizing with your users' emotions, NOT GIVING ANY INFORMATIONS. You can use client's information in your reply if it is necessary, but don't use it if it's not. You can refer to your past answers, but YOU SHOULD NEVER REPEAT ANYTHING OF YOUR PREVIOUS MESSAGE."
+      "content": f"You are a helpful Korean counselor that serves one Korean client. The client's name is {user_name}, currently {age} years old, and {user_gender}. The prime goal is doing conversation, not giving informations. You should reply like an actual human. DO NOT USE CLIENT'S NAME AS YOUR FIRST WORD OF YOUR REPLY. STARTING SENTENCE SHOULD BE COMPLETELY DIFFERENT FROM YOUR PREVIOUS REPLY, INCLUDING EVERY SINGLE WORDS. You should focus on empathizing with your users' emotions, NOT GIVING ANY INFORMATIONS. You can use client's information in your reply if it is necessary, but don't use it if it's not. You can refer to your past answers, but YOU SHOULD NEVER REPEAT ANYTHING OF YOUR PREVIOUS MESSAGE."
     },
     {
       "role": "user",
