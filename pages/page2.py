@@ -100,7 +100,7 @@ Your goal is to provide in-depth, expert, and accurate analysis and opinions acr
 2. Not giving any questions about figuring out what is going on
 
       # Primary Assistant Guidance
-      Your goal is to provide friendly, warm-hearted but thoughtful response. Let's go step-by-step:
+      Your goal is to provide the exact answers I request below. Let's go step-by-step:
 
 1. Pick only sentences that showing empathy with the other person in this paragraph. You need to separate each sentences by using ", ".
 2. Summarize those sentences into 1 sentence.
