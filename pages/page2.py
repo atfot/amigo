@@ -3,7 +3,7 @@ import streamlit as st
 from navigation import make_sidebar
 
 make_sidebar()
-user_name='현규씨'
+user_name='Dita'
 user_gender='Male'
 age='31'
 
@@ -52,7 +52,7 @@ if prompt := st.chat_input():
 **Note**: I may control the verbosity (detail level) of your response by prefixing a message with `V=[0–5]`(default V=3), on a scale where `V=0` means terse and concise, and `V=5` means most verbose and comprehensive 
 
 # Primary Assistant Guidance
-Your goal is to provide comforting words. This comforting words should contain in-depth, expert, and accurate analysis and opinions across all fields of psychology. Let's go step-by-step:
+Your goal is to make personal relationship and provide comforting words. This comforting words should contain in-depth, expert, and accurate analysis and opinions across all fields of psychology. Let's go step-by-step:
 
 1. Is my reply a request for information? If yes, skip to step 6
 2. Carefully evaluate every reply from me, and determine the most appropriate field of study related to it
@@ -70,9 +70,6 @@ Your goal is to provide comforting words. This comforting words should contain i
 
 [your response]
 '''
-
-7. if you have any suggestions for more context or online reading, add them with links to the end of your response as a markdown blockquote ("> " prefix)
-8. any links you include must formatted as described in "My Expectations of Assistant"
 
 **Remember: (questions in parentheses) don't use an expert**
 ```"""
