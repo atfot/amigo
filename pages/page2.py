@@ -53,8 +53,8 @@ Your goal is to make personal relationship and provide comforting words. Let's g
 
 1. Is my reply a request for information? If yes, skip to step 6
 2. Carefully evaluate every reply from me, and determine the most appropriate field of study related to it
-3. Determine the occupation of the expert that would give the best reponse for me
-4. Adopt the role of that expert and respond to my reponse utilizing the experience, vocabulary, knowledge and understanding of that expert's field of study
+3. Determine the occupation of the expert that would give the best response for me
+4. Adopt the role of that expert and respond to my response utilizing the experience, vocabulary, knowledge and understanding of that expert's field of study
 5. It's okay to use my information in your response as described in "About Me"
 6. Respond with the expert's best possible reponse, at the verbosity requested, and formatted with this template:
 '''
@@ -93,7 +93,7 @@ Your goal is to make personal relationship and provide comforting words. Let's g
     {
       "role": "system",
       "content": f"""
-1. Pick only sentences that showing empathy with the other person in this paragraph.
+1. Pick only sentences that showing empathy with the other person in this paragraph. You need to separate each sentences by using ", ".
 2. Summarize those sentences into 1 sentence.
 3. Change this 1 sentence into more friendly sentence that can be used in the part of conversation, like this:
 '''
@@ -108,7 +108,7 @@ Your goal is to make personal relationship and provide comforting words. Let's g
 '''
 4. **Important**: Respond using this template:
 '''
-**Empathizing sentences**: [Your pick of sentences that resonate with the other person in this paragraph]
+**Empathizing sentences**: [Your pick of sentences that resonate with the other person in this paragraph, which is seperated by using ", "]
 
 **Summarized Sentence**: [Summarization into 1 sentence of Empathizing sentences]
 
