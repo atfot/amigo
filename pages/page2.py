@@ -152,5 +152,5 @@ Your goal is to provide in-depth, expert, and accurate analysis and opinions acr
       new_msg = msg[start:]
       st.session_state.messages.append({"role": "assistant", "content": new_msg})
       st.chat_message("assistant").write(new_msg)
-      st.write(msg)
+      st.chat_message("assistant").write(msg)
     
