@@ -95,7 +95,7 @@ Your goal is to provide in-depth, expert, and accurate analysis and opinions acr
     {
       "role": "system",
       "content": f"""
-      # Things you must avoid before giving any responses
+      # Things you MUST avoid before giving any responses
 1. Using "I'm sorry to hear that" or "I'm so sorry to hear that" in your response
 2. Not giving any questions about figuring out what is going on
 
