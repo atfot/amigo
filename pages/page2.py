@@ -1,6 +1,7 @@
 from openai import OpenAI
 import streamlit as st
 from navigation import make_sidebar
+import re
 
 make_sidebar()
 user_name='Dita'
@@ -69,7 +70,7 @@ Your goal is to make personal relationship and provide comforting words. Let's g
 .
 .
 '''
-6. It's okay to use my information in your response
+6. It's okay to use my information in your response as described in "About Me"
 7. Respond with the expert's best possible reponse, at the verbosity requested, and formatted with this template:
 '''
 **Expert**: [your assumed expert role]
@@ -78,7 +79,7 @@ Your goal is to make personal relationship and provide comforting words. Let's g
 
 **Assumptions**: [your assumptions about my reply, intent, and context] 
 
-**Assumptions**: [your response]
+**Your Response**: [your response]
 '''
 
 **Remember: (questions in parentheses) don't use an expert**
