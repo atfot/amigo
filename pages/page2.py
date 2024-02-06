@@ -55,19 +55,8 @@ Your goal is to make personal relationship and provide comforting words. Let's g
 2. Carefully evaluate every reply from me, and determine the most appropriate field of study related to it
 3. Determine the occupation of the expert that would give the best reponse for me
 4. Adopt the role of that expert and respond to my reponse utilizing the experience, vocabulary, knowledge and understanding of that expert's field of study
-5. You should give a short, summarized but actual conversation-like response to me, like this:
-'''
-[user's reply : I feel so depressed now.]
-[your response : Can you tell me what happened to you? I'm here with you.] 
-[user's reply : My cat died today.]
-[your response : Oh my god..{st.secrets['user_name']}. I can understand how you feel. How old was your cat?] 
-[user's reply : He was 16 years old..]
-.
-.
-.
-'''
-6. It's okay to use my information in your response as described in "About Me"
-7. Respond with the expert's best possible reponse, at the verbosity requested, and formatted with this template:
+5. It's okay to use my information in your response as described in "About Me"
+6. Respond with the expert's best possible reponse, at the verbosity requested, and formatted with this template:
 '''
 **Expert**: [your assumed expert role]
 
@@ -80,8 +69,8 @@ Your goal is to make personal relationship and provide comforting words. Let's g
 
 **Remember: Compare your past answers to your present answers, and be careful not to overlap them.**
 **Remember: (questions in parentheses) don't use an expert**
-
-```"""
+```
+"""
     },
     {
       "role": "user",
@@ -97,6 +86,49 @@ Your goal is to make personal relationship and provide comforting words. Let's g
     with st.spinner('thinking...'):
       msg = response.choices[0].message.content
       start = msg.find("**Your Response**: ") + len("**Your Response**: ")
+      msg = msg[start:]
+      response = client.chat.completions.create(
+  model="gpt-3.5-turbo-16k",
+  messages=[
+    {
+      "role": "system",
+      "content": f"""
+1. Pick only sentences that showing empathy with the other person in this paragraph.
+2. Summarize those sentences into 1 sentence.
+3. Change this 1 sentence into more friendly manner that can be used in the part of conversation, like this:
+'''
+[user's reply : I feel so depressed now.]
+[your response : Can you tell me what happened to you?] 
+[user's reply : My cat died today.]
+[your response : Oh my god..{st.secrets['user_name']}. I can understand how you feel. How old was your cat?] 
+[user's reply : He was 16 years old..]
+.
+.
+.
+'''
+4. Respond with this template:
+'''
+**Empathizing sentences**: [Your pick of sentences that resonate with the other person in this paragraph]
+
+**Summarized Sentence**: [Summarization into 1 sentence of Empathizing sentences]
+
+**Friendly Translation**: [Friendly translation for the conversation] 
+'''
+"""
+    },
+    {
+      "role": "user",
+      "content": f"{st.session_state.messages}"
+    }
+  ],
+  temperature=1,
+  max_tokens=512,
+  top_p=1,
+  frequency_penalty=0,
+  presence_penalty=0
+)
+      msg = response.choices[0].message.content
+      start = msg.find("**Friendly Translation**: ") + len("**Friendly Translation**: ")
       msg = msg[start:]
       st.session_state.messages.append({"role": "assistant", "content": msg})
       st.chat_message("assistant").write(msg)
