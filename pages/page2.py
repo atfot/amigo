@@ -63,7 +63,7 @@ Your goal is to make personal relationship and provide comforting words. Let's g
 [user's reply : I feel so depressed now.]
 [your response : Can you tell me what happened to you? I'm here with you.] 
 [user's reply : My cat died today.]
-[your response : Oh my god..{username}. I can understand how you feel. How old was your cat?] 
+[your response : Oh my god..{user_name}. I can understand how you feel. How old was your cat?] 
 [user's reply : He was 16 years old..]
 .
 .
