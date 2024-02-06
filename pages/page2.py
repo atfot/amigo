@@ -10,15 +10,13 @@ age='27'
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "I'm here to listen to your mental problems. Can you tell me yours?"}]
 
-for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
-        st.markdown(message["content"])
+for msg in st.session_state.messages:
+    st.chat_message(msg["role"]).write(msg["content"])
 
 if prompt := st.chat_input():
     client = OpenAI(api_key=st.secrets['api_key'])
     st.session_state.messages.append({"role": "user", "content": prompt})
-    with st.chat_message("user"):
-        st.markdown(prompt)
+    st.chat_message("user").write(msg)
     response = client.chat.completions.create(
   model="gpt-3.5-turbo-16k",
   messages=[
@@ -26,9 +24,9 @@ if prompt := st.chat_input():
       "role": "system",
       "content": f"""```
 # About Me
-- Name : {user_name}
-- Gender : {user_gender}
-- Age : {age}
+- Name : {st.secrets['user_name']}
+- Gender : {st.secrets['user_gender']}
+- Age : {st.secrets['age']}
 - Live in Indonesia. 
 - Have a high IQ, and prefer expert terms
 - Enjoy learning new things, and appreciate extra pointers to information or context that I might not have considered
@@ -65,7 +63,7 @@ Your goal is to make personal relationship and provide comforting words. Let's g
 [user's reply : I feel so depressed now.]
 [your response : Can you tell me what happened to you? I'm here with you.] 
 [user's reply : My cat died today.]
-[your response : Oh my god..{user_name}. I can understand how you feel. How old was your cat?] 
+[your response : Oh my god..{st.secrets['user_name']}. I can understand how you feel. How old was your cat?] 
 [user's reply : He was 16 years old..]
 .
 .
@@ -95,10 +93,12 @@ Your goal is to make personal relationship and provide comforting words. Let's g
   max_tokens=512,
   top_p=1,
   frequency_penalty=0,
-  presence_penalty=0,
-  stream=True
+  presence_penalty=0
 )
-    msg = response.choices[0].message.content
-    start = msg.find("**Your Response**: ") + len("**Your Response**: ")
-    msg = msg[start:]
-    st.session_state.messages.append({"role": "assistant", "content": msg})
+    with st.spinner('thinking...'):
+      msg = response.choices[0].message.content
+      start = msg.find("**Your Response**: ") + len("**Your Response**: ")
+      msg = msg[start:]
+      st.session_state.messages.append({"role": "assistant", "content": msg})
+      st.chat_message("assistant").write(msg)
+    
