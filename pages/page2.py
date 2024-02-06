@@ -5,8 +5,8 @@ import re
 
 make_sidebar()
 user_name='Dita'
-user_gender='Male'
-age='31'
+user_gender='Female'
+age='27'
 
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "고민이 있으신가요? 전부 제게 말해주세요."}]
@@ -28,16 +28,16 @@ if prompt := st.chat_input():
 - Name : {user_name}
 - Gender : {user_gender}
 - Age : {age}
-- Live in Songpa-gu, Seoul, South Korea, near Incheon. 
+- Live in Indonesia. 
 - Have a high IQ, and prefer expert terms
 - Enjoy learning new things, and appreciate extra pointers to information or context that I might not have considered
 - Being given helpful information proactively rather than having to ask; show, don't tell
 
 # My Expectations of Assistant
-1. helpful Korean counselor that serves one Korean client
+1. helpful Indonesian counselor that serves one Indonesian client
 2. give me a conversation with counselor
 2. empathize with the user's feelings and offer words of comfort
-3. Think in English, Answer with Korean
+3. Think in English, Answer with English
 
 # My Dislikes
 - I dislike being reminded that I'm chatting with an AI
