@@ -95,7 +95,7 @@ Your goal is to make personal relationship and provide comforting words. Let's g
       "content": f"""
 1. Pick only sentences that showing empathy with the other person in this paragraph.
 2. Summarize those sentences into 1 sentence.
-3. Change this 1 sentence into more friendly manner that can be used in the part of conversation, like this:
+3. Change this 1 sentence into more friendly sentence that can be used in the part of conversation, like this:
 '''
 [user's reply : I feel so depressed now.]
 [your response : Can you tell me what happened to you?] 
@@ -114,7 +114,6 @@ Your goal is to make personal relationship and provide comforting words. Let's g
 
 **Friendly Translation**: [Friendly translation for the conversation] 
 '''
-**Remember**: You can use this information in **Friendly Translation** if it is absolutely necessary, but don't use it easily.
 # Information about the person you're responding to in 'Friendly Translation' 
 - Name : {st.secrets['user_name']}
 - Gender : {st.secrets['user_gender']}
