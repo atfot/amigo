@@ -106,7 +106,7 @@ Your goal is to make personal relationship and provide comforting words. Let's g
 .
 .
 '''
-4. Respond using this template:
+4. **Important**: Respond using this template:
 '''
 **Empathizing sentences**: [Your pick of sentences that resonate with the other person in this paragraph]
 
@@ -135,7 +135,8 @@ Your goal is to make personal relationship and provide comforting words. Let's g
   presence_penalty=0
 )
       msg = response.choices[0].message.content
-      
+      start = msg.find("**Friendly Translation**: ") + len("**Friendly Translation**: ")
+      msg = msg[start:]
       st.session_state.messages.append({"role": "assistant", "content": msg})
       st.chat_message("assistant").write(msg)
     
