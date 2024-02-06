@@ -78,7 +78,7 @@ Your goal is to make personal relationship and provide comforting words. Let's g
 
 **Assumptions**: [your assumptions about my reply, intent, and context] 
 
-[your response]
+**Assumptions**: [your response]
 '''
 
 **Remember: (questions in parentheses) don't use an expert**
