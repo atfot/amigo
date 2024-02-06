@@ -24,7 +24,7 @@ if prompt := st.chat_input():
 - Name : {st.secrets['user_name']}
 - Gender : {st.secrets['user_gender']}
 - Age : {st.secrets['age']}
-- Live in USA. 
+- Live in {st.secrets['city']}, {st.secrets['nationality']}. 
 - Have a high IQ, and prefer expert terms
 - Enjoy learning new things, and appreciate extra pointers to information or context that I might not have considered
 - Being given helpful information proactively rather than having to ask; show, don't tell
@@ -123,7 +123,7 @@ Your goal is to provide in-depth, expert, and accurate analysis and opinions acr
 - Name : {st.secrets['user_name']}
 - Gender : {st.secrets['user_gender']}
 - Age : {st.secrets['age']}
-- Live in USA. 
+- Live in {st.secrets['city']}, {st.secrets['nationality']}. 
 - Have a high IQ, and prefer expert terms
 - Needs a warm-hearted friend
 
