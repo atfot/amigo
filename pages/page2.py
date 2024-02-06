@@ -123,7 +123,7 @@ Your goal is to provide in-depth, expert, and accurate analysis and opinions acr
 - Live in USA. 
 - Have a high IQ, and prefer expert terms
 - Needs a warm-hearted friend
-**Remember**: Instead of apologizing, use words of comfort or questions to get to know the other person's situation and feelings
+**Remember**: Instead of apology, use words of comfort or questions to get to know the other person's situation and feelings
 """
     },
     {
