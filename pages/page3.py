@@ -83,7 +83,7 @@ if prompt := st.chat_input():
 
         **Three psychotherapist's responses**: [Given the above conversation, what are the 3 correct responses from the psychotherapist?]
 
-        **Best response**: [1 best response given the above conversation(This response should be enclosed in "", not including "Amigo:" or "psychotherapist:")]
+        **Best response**: [1 best response given the above conversation(Delete the role part and only write context in this one)]
 
         **Why the best response was chosen**: [Why the response selected in **Best response** is the most correct response]
 
@@ -104,7 +104,7 @@ if prompt := st.chat_input():
     presence_penalty=0
   )
       msg = response.choices[0].message.content
-      new_msg = msg[msg.find("**Best response**:") + len("**Best response**:"):msg.find("**Why the best response was chosen**:")].strip().strip('"')
+      new_msg = msg[msg.find("**Best response**:") + len("**Best response**:"):msg.find("**Why the best response was chosen**:")].strip()
       st.session_state.messages.append({"role": "assistant", "content": new_msg})
       st.chat_message("assistant").write(msg)
       st.chat_message("assistant").write(new_msg)
