@@ -104,7 +104,7 @@ if prompt := st.chat_input():
     presence_penalty=0
   )
       msg = response.choices[0].message.content
-      start_index = msg.find("**Best response**: ")
+      start_index = msg.find("**Best response**: ") + len("**Best response**: ")
       end_index = msg.find("**Why the best response was chosen**: ")
       new_msg = msg[start_index:end_index].strip()
       st.session_state.messages.append({"role": "assistant", "content": new_msg})
