@@ -5,7 +5,7 @@ from navigation import make_sidebar
 make_sidebar()
 st.subheader('still not perfect chatbot')
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "assistant", "content": "Tell me what seems to be on your mind."}]
+    st.session_state["messages"] = [{"role": "assistant", "content": "고민이 있으신가요? 제게 전부 말해주세요."}]
 
 for msg in st.session_state.messages:
     st.chat_message(msg["role"]).write(msg["content"])
