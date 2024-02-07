@@ -68,7 +68,7 @@ if prompt := st.chat_input():
 
         - The conversation below is a continuation of the above
         '''        
-        Psychotherapist: {welcome_message}\n\n
+        Psychotherapist: {welcome_message}
         Mental patient: {prompt}        
         '''
 
