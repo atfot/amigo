@@ -132,11 +132,11 @@ Your goal is to provide in-depth, expert, and accurate analysis and opinions acr
 
 # Things I WANT to see in your responses
 1. Not using a sentence with "sorry to hear that"
-2. Giving some questions about figuring out what is going on
+2. Giving some questions about figuring out what is going on if it is necessary
 
 # Things you MUST avoid before giving any responses
 1. Using a sentence with "sorry to hear that"
-2. Not giving any questions about figuring out what is going on
+2. Not giving any questions about figuring out what is going on if it is necessary
 """
     },
     {
