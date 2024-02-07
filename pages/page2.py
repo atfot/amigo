@@ -136,7 +136,7 @@ Your goal is to provide in-depth, expert, and accurate analysis and opinions acr
 
 # Things you MUST avoid before giving any responses
 1. Using a sentence with "sorry to hear that" **Friendly Translation**
-2. Not giving any questions about figuring out what is going on if it is necessary in **Friendly Translation**
+2. Not giving any questions about figuring out what is going on in **Friendly Translation**
 """
     },
     {
