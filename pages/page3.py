@@ -68,8 +68,11 @@ if prompt := st.chat_input():
 
         - The conversation below is a continuation of the above
         '''
+        
         Psychotherapist: {welcome_message}
+
         Mental patient: {prompt}
+        
         '''
 
         - Please read this conversation carefully and respond in the form below.
@@ -83,7 +86,7 @@ if prompt := st.chat_input():
 
         **Three psychotherapist's responses**: [Given the above conversation, what are the 3 correct responses from the psychotherapist?]
 
-        **Best response**: [1 best response given the above conversation(Delete only write the context in this one)]
+        **Best response**: [1 best response given the above conversation(Only write the context in this one)]
 
         **Why the best response was chosen**: [Why the response selected in **Best response** is the most correct response]
 
