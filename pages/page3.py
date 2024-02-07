@@ -67,12 +67,9 @@ if prompt := st.chat_input():
         '''
 
         - The conversation below is a continuation of the above
-        '''
-        
+        '''        
         Psychotherapist: {welcome_message}
-
-        Mental patient: {prompt}
-        
+        Mental patient: {prompt}        
         '''
 
         - Please read this conversation carefully and respond in the form below.
@@ -82,7 +79,7 @@ if prompt := st.chat_input():
 
         **Background of the conversation**: [The entire background of the conversations I've written so far]
 
-        **Conversation content**: [All conversations up to this point(Use '\n\n'to separate each dialogue)]
+        **Conversation content**: [All conversations up to this point(Seperate each dialogue by using '\n\n')]
 
         **Three psychotherapist's responses**: [Given the above conversation, what are the 3 correct responses from the psychotherapist?]
 
