@@ -83,7 +83,7 @@ if prompt := st.chat_input():
 
         **Three psychotherapist's responses**: [Given the above conversation, what are the 3 correct responses from the psychotherapist?]
 
-        **Best response**: [1 best response given the above conversation(This response should be enclosed in "")]
+        **Best response**: [1 best response given the above conversation(This response should be enclosed in "", not including "Amigo:" or "psychotherapist:")]
 
         **Why the best response was chosen**: [Why the response selected in **Best response** is the most correct response]
 
