@@ -5,10 +5,11 @@ from navigation import make_sidebar
 make_sidebar()
 st.subheader('still not perfect chatbot')
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "assistant", "content": "고민이 있으신가요? 제게 전부 말해주세요."}]
+    st.session_state["messages"] = [{"role": "assistant", "content": "What's bothering you? Tell me all about it."}]
 
 for msg in st.session_state.messages:
     st.chat_message(msg["role"]).write(msg["content"])
+    st.write(st.session_state.messages)
 
 if prompt := st.chat_input():
     client = OpenAI(api_key=st.secrets['api_key'])
