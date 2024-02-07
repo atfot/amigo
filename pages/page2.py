@@ -30,7 +30,7 @@ if prompt := st.chat_input():
 - Being given helpful information proactively rather than having to ask; show, don't tell
 
 # My Expectations of Assistant
-1. helpful Indonesian counselor that serves one Indonesian client
+1. helpful counselor that serves one client
 2. give me a conversation with counselor
 2. empathize with the user's feelings and offer words of comfort
 3. Think in English, Answer with English
@@ -111,13 +111,16 @@ Your goal is to provide in-depth, expert, and accurate analysis and opinions acr
 .
 .
 '''
-4. **Important**: Respond using this template:
+4. Translate your sentence into Korean.
+5. **Important**: Respond using this template:
 '''
 **Empathizing sentences**: [Your pick of sentences that resonate with the other person in this paragraph, which is seperated by using ", "]
 
 **Summarized Sentence**: [Summarization into 1 sentence of Empathizing sentences]
 
 **Friendly Translation**: [Warm-hearted translation for the conversation using 1~2 sentence or question] 
+
+**Final Output**: [Translate your **Friendly Translation** into Korean]
 '''
 # Information about the person you're responding to in 'Friendly Translation' 
 - Name : {st.secrets['user_name']}
@@ -148,7 +151,7 @@ Your goal is to provide in-depth, expert, and accurate analysis and opinions acr
   presence_penalty=0
 )
       msg = response.choices[0].message.content
-      start = msg.find("**Friendly Translation**: ") + len("**Friendly Translation**: ")
+      start = msg.find("**Final Output**: ") + len("**Final Output**: ")
       new_msg = 'Final Output: ' + msg[start:]
       st.session_state.messages.append({"role": "assistant", "content": new_msg})
       st.chat_message("assistant").write(msg)
