@@ -80,7 +80,7 @@ if prompt := st.chat_input():
 
         **Three psychotherapist's responses**: [Given the above conversation, what are the 3 correct responses from the psychotherapist?]
 
-        **Best response**: [1 best response given the above conversation(Only write context here - no job or role, or no numbered list)]
+        **Best response**: [1 best response given the above conversation(Show the content by enclosing it in " ", like "the context of Best response")]
 
         **Why the best response was chosen**: [Why the response selected in **Best response** is the most correct response]
 
