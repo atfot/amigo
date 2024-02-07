@@ -5,12 +5,9 @@ from navigation import make_sidebar
 make_sidebar()
 welcome_message="What's bothering you? Tell me all about it."
 
-st.write('What's bothering you? Tell me all about it.')
+st.write(welcome_message)
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": welcome_message}]
-
-for msg in st.session_state.messages:
-    st.chat_message(msg["role"]).write(msg["content"])
 
 if prompt := st.chat_input():
     client = OpenAI(api_key=st.secrets['api_key'])
