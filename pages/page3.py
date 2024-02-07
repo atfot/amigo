@@ -3,13 +3,14 @@ import streamlit as st
 from navigation import make_sidebar
 
 make_sidebar()
+welcome_message="What's bothering you? Tell me all about it."
+
 st.subheader('still not perfect chatbot')
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "assistant", "content": "What's bothering you? Tell me all about it."}]
+    st.session_state["messages"] = [{"role": "assistant", "content": welcome_message}]
 
 for msg in st.session_state.messages:
     st.chat_message(msg["role"]).write(msg["content"])
-st.write(list(st.session_state.messages[0].values())[1])
 
 if prompt := st.chat_input():
     client = OpenAI(api_key=st.secrets['api_key'])
@@ -66,8 +67,8 @@ if prompt := st.chat_input():
 
       - The conversation below is a continuation of the above
       '''
-      Psychotherapist: What's bothering you? Tell me all about it.
-      Mental patient: I'm so depressed right now...
+      Psychotherapist: {welcome_message}
+      Mental patient: {prompt}
       '''
 
       - Please read this conversation carefully and respond in the form below.
