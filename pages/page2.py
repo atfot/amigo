@@ -111,7 +111,7 @@ Your goal is to provide in-depth, expert, and accurate analysis and opinions acr
 .
 .
 '''
-4. Translate your sentence into Korean.
+4. Translate your sentence into polite Korean language.
 5. **Important**: Respond using this template:
 '''
 **Empathizing sentences**: [Your pick of sentences that resonate with the other person in this paragraph, which is seperated by using ", "]
@@ -120,7 +120,7 @@ Your goal is to provide in-depth, expert, and accurate analysis and opinions acr
 
 **Friendly Translation**: [Warm-hearted translation for the conversation using 1~2 sentence or question] 
 
-**Final Output**: [Translate your **Friendly Translation** into Korean]
+**Final Output**: [Translate your **Friendly Translation** into polite Korean language]
 '''
 # Information about the person you're responding to in 'Friendly Translation' 
 - Name : {st.secrets['user_name']}
