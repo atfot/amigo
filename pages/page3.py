@@ -82,7 +82,7 @@ if prompt := st.chat_input():
 
         **Background of the conversation**: [The entire background of the conversations I've written so far]
 
-        **Conversation content**: [All conversations up to this point]
+        **Conversation content**: [All conversations up to this point(Use '\n\n'to separate each dialogue)]
 
         **Three psychotherapist's responses**: [Given the above conversation, what are the 3 correct responses from the psychotherapist?]
 
