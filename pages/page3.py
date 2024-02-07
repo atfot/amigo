@@ -9,7 +9,7 @@ if "messages" not in st.session_state:
 
 for msg in st.session_state.messages:
     st.chat_message(msg["role"]).write(msg["content"])
-    st.write(st.session_state.messages)
+    st.write(st.session_state.messages["content"])
 
 if prompt := st.chat_input():
     client = OpenAI(api_key=st.secrets['api_key'])
