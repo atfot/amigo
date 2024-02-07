@@ -5,7 +5,7 @@ from navigation import make_sidebar
 make_sidebar()
 welcome_message="What's bothering you? Tell me all about it."
 
-st.subheader('still not perfect chatbot')
+st.write('What's bothering you? Tell me all about it.')
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": welcome_message}]
 
