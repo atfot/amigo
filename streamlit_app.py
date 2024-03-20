@@ -40,7 +40,7 @@ if language_selection=='Korean':
 
     col1, col2 = st.columns([8.5,1.5])
     with col1:
-        if st.button("Log in", type="primary"):
+        if st.button("로그인", type="primary"):
             if username == "test" and password == "test":
                 st.session_state.logged_in = True
                 st.success("성공적으로 로그인 되었습니다!")
@@ -49,7 +49,7 @@ if language_selection=='Korean':
             else:
                 st.error("유저 이름 또는 패스워드가 맞지 않습니다.")
     with col2:
-        if st.button("New User", type="secondary"):
+        if st.button("새로 오신 분", type="secondary"):
             st.session_state.logged_in = True
             st.success("네리에 오신 것을 환영합니다!")
             sleep(0.5)
