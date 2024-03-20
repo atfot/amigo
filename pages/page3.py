@@ -31,7 +31,7 @@ if prompt := st.chat_input():
         messages=[
           {
             "role": "system",
-            "content": "Please shortly summarize the conversation below."
+            "content": "Please briefly summarize the conversation below."
           },
           {
             "role": "user",
