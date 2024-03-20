@@ -96,7 +96,7 @@ if language_selection=='한국어':
     if 'signin' in st.session_state:
         col, col2, col3 = st.columns([3,4,3])
         with col2:
-            st.success("성공적으로 로그인 되었습니다!")
+            st.success("네리에 오신 것을 환영합니다!")
             sleep(0.5)
             st.switch_page("pages/signin.py")
     if 'signin' not in st.session_state:
