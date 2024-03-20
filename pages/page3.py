@@ -134,7 +134,7 @@ if prompt := st.chat_input():
     max_tokens=1024,
     top_p=1,
     frequency_penalty=0.6,
-    presence_penalty=1.15
+    presence_penalty=1
   )
       time.sleep(0.1)
       msg = response.choices[0].message.content
