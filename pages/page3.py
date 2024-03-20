@@ -109,7 +109,7 @@ if prompt := st.chat_input():
 
         **Three psychotherapist's responses**: [Given the above conversation, what are the 3 correct responses from the psychotherapist?]
 
-        **Best response**: [1 best response given the above conversation(Show the content by enclosing it in " ", like "the context of Best response". Never display unordered or ordered lists here, except for sentences.)]
+        **Best response**: [1 best response given the above conversation(Show the content by enclosing it in " ", like "the context of Best response". Never display unordered or ordered lists here, except for sentences. Also never display role in here, such as Psychotherapist.)]
 
         **Why the best response was chosen**: [Why the response selected in **Best response** is the most correct response]
 
@@ -136,6 +136,7 @@ if prompt := st.chat_input():
     frequency_penalty=1,
     presence_penalty=0
   )
+      time.sleep(0.1)
       msg = response.choices[0].message.content
       new_msg = msg[msg.find("**Best response**:") + len("**Best response**:"):msg.find("**Why")].strip().strip('"')
       st.session_state.messages.append({"role": "Psychotherapist", "content": new_msg})
