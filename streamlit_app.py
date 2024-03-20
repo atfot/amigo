@@ -17,8 +17,14 @@ if language_selection=='English':
     username = st.text_input("Username")
     password = st.text_input("Password", type="password")
 
-    col1, col2 = st.columns([8.5,1.5])
+    col1, col2 = st.columns([1.5,8.5])
     with col1:
+        if st.button("New User", type="secondary"):
+            st.session_state.logged_in = True
+            st.success("Welcome to Neri!")
+            sleep(0.5)
+            st.switch_page("pages/signin.py")
+    with col2:
         if st.button("Log in", type="primary"):
             if username == "test" and password == "test":
                 st.session_state.logged_in = True
@@ -27,19 +33,19 @@ if language_selection=='English':
                 st.switch_page("pages/page1.py")
             else:
                 st.error("Incorrect username or password")
-    with col2:
-        if st.button("New User", type="secondary"):
-            st.session_state.logged_in = True
-            st.success("Welcome to Neri!")
-            sleep(0.5)
-            st.switch_page("pages/signin.py")
 
 if language_selection=='Korean': 
     username = st.text_input("유저 이름")
     password = st.text_input("비밀번호", type="password")
 
-    col1, col2 = st.columns([8.2,1.8])
+    col1, col2 = st.columns([1.8,8.2])
     with col1:
+        if st.button("새로 오신 분", type="secondary"):
+            st.session_state.logged_in = True
+            st.success("네리에 오신 것을 환영합니다!")
+            sleep(0.5)
+            st.switch_page("pages/signin.py")
+    with col2:
         if st.button("로그인", type="primary"):
             if username == "test" and password == "test":
                 st.session_state.logged_in = True
@@ -48,10 +54,4 @@ if language_selection=='Korean':
                 st.switch_page("pages/page1.py")
             else:
                 st.error("유저 이름 또는 패스워드가 맞지 않습니다.")
-    with col2:
-        if st.button("새로 오신 분", type="secondary"):
-            st.session_state.logged_in = True
-            st.success("네리에 오신 것을 환영합니다!")
-            sleep(0.5)
-            st.switch_page("pages/signin.py")
             
