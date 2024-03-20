@@ -38,7 +38,7 @@ if language_selection=='Korean':
     username = st.text_input("유저 이름")
     password = st.text_input("비밀번호", type="password")
 
-    col1, col2 = st.columns([8.4,1.6])
+    col1, col2 = st.columns([8.5,1.5])
     with col1:
         if st.button("새로 오신 분", type="secondary"):
             st.session_state.logged_in = True
