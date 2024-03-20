@@ -1,10 +1,13 @@
 import streamlit as st
 from time import sleep
 
-language_selection=st.selectbox(
-            'Language(언어)',
-            ('한국어','English')
-        )
+col1,col2=st.columns([2,8])
+with col1:
+    language_selection=st.selectbox(
+                'Language(언어)',
+                ('한국어','English')
+            )
+st.title('')
 if language_selection=='English': 
     col1,col2,col3=st.columns([4,2,4])
     with col2:
