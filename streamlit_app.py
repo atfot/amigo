@@ -60,7 +60,7 @@ if language_selection=='English':
             sleep(0.5)
             st.switch_page("pages/signin.py")
 
-if language_selection=='Korean': 
+if language_selection=='한국어': 
     st.session_state['Korean_language']=True
     username = st.text_input("유저 이름")
     password = st.text_input("비밀번호", type="password")
