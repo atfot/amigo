@@ -122,9 +122,9 @@ if prompt := st.chat_input():
         "content": f"{st.session_state.conversations}"
       }
     ],
-    temperature=0.7,
+    temperature=1,
     max_tokens=1024,
-    top_p=0.8,
+    top_p=1,
     frequency_penalty=0,
     presence_penalty=0
   )
