@@ -16,6 +16,7 @@ if prompt := st.chat_input():
     client = OpenAI(api_key=st.secrets['api_key'])
     st.session_state.messages.append({"role": "Mental patient", "content": prompt})
     st.chat_message("user").write(prompt)
+    st.write(len(st.session_state.messages)%6)
     if len(st.session_state.messages)%6==0:
         response = client.chat.completions.create(
         model="gpt-3.5-turbo-16k",
@@ -118,11 +119,11 @@ if prompt := st.chat_input():
       },
       {
         "role": "user",
-        "content": f"{st.session_state.messages}"
+        "content": f"{st.session_state.conversations}"
       }
     ],
     temperature=1,
-    max_tokens=512,
+    max_tokens=1024,
     top_p=1,
     frequency_penalty=0,
     presence_penalty=0
