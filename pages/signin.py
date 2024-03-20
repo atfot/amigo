@@ -6,6 +6,8 @@ if st.session_state.korean_mode==1:
         """
     # 반갑습니다! 
     # 회원가입을 위한 양식을 작성해주세요.
+    
+    현재 회원가입 페이지는 작동되지 않는 기능입니다.
     """
     )
     x=0
@@ -75,6 +77,8 @@ if st.session_state.korean_mode==0:
         """
     # Okay! Nice to meet you sir. 
     # Please fill in the blanks for sign up.
+
+    The signup page is currently a non-functional feature.
     """
     )
     x=0
