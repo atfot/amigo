@@ -3,7 +3,7 @@ from time import sleep
 
 col1,col2,col3=st.columns([3,4,3])
 with col2:
-    st.write("Neri")
+    st.title("Neri")
 st.write("Please login (username `test`, password `test`).")
 
 username = st.text_input("Username")
