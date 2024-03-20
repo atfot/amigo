@@ -34,7 +34,7 @@ if language_selection:
             st.session_state.signin = True
     with col2:
         if st.button("Log in", type="primary"):
-            if username == "admin" and password == "admin":
+            if username == 1 and password == 1:
                 st.session_state.logged_in = True
             else:
                 st.session_state.login_error = True
