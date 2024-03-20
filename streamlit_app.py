@@ -1,7 +1,7 @@
 import streamlit as st
 from time import sleep
 
-col1,col2=st.columns([2,8])
+col1,col2=st.columns([4,6])
 with col1:
     language_selection=st.toggle('한국어/English')
 st.title('')
