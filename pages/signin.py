@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-if st.session_state.korean_mode==True:
+if st.session_state.korean_mode==1:
     st.write(
         """
     # 반갑습니다! 
@@ -70,7 +70,7 @@ if st.session_state.korean_mode==True:
                     st.switch_page('pages/page1')
             else:
                 pass
-if st.session_state.korean_mode==False:
+if st.session_state.korean_mode==0:
     st.write(
         """
     # Okay! Nice to meet you sir. 
