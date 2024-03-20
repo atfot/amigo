@@ -130,4 +130,5 @@ if prompt := st.chat_input():
         )
         msg = response.choices[0].message.content
         st.write(msg)
+        st.write(st.session_state.messages[2:])
         
