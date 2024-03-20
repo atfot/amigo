@@ -38,7 +38,7 @@ if language_selection=='Korean':
     username = st.text_input("유저 이름")
     password = st.text_input("비밀번호", type="password")
 
-    col1, col2 = st.columns([8.35,1.55])
+    col1, col2 = st.columns([8.45,1.55])
     with col1:
         if st.button("로그인", type="primary"):
             if username == "test" and password == "test":
