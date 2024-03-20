@@ -2,7 +2,9 @@ import streamlit as st
 import pandas as pd
 
 if st.session_state.korean_mode==1:
-    st.link_button("메인 화면으로", "https://neriuut.streamlit.app/")
+    button=st.button("메인 화면으로")
+    if button:
+        st.switch_page("streamlit_app.py")
     st.title('')
     st.write(
         """
@@ -75,7 +77,9 @@ if st.session_state.korean_mode==1:
             else:
                 pass
 if st.session_state.korean_mode==0:
-    st.link_button("Go to main", "https://neriuut.streamlit.app/")
+    button=st.button("Go to main", "https://neriuut.streamlit.app/")
+    if button:
+        st.switch_page("streamlit_app.py")
     st.title('')
     st.write(
         """
