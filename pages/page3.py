@@ -1,6 +1,7 @@
 from openai import OpenAI
 import streamlit as st
 from navigation import make_sidebar
+import time
 
 st.set_page_config(
     page_title="Your AI Therapist, Neri",
@@ -68,12 +69,12 @@ if prompt := st.chat_input():
         - City of residence: {st.secrets['city']}
 
         2. psychological counselor
-        - Name : Amigo
+        - Name : Neri
         - Age : 55 years old
         - Gender: Male
         - Country of Origin : South Korea
         - City of residence : Seoul
-        - Characteristics : Amigo knows the information of {st.secrets['user_name']}, a mentally ill person, and conducts psychotherapy based on it
+        - Characteristics : Neri knows the information of {st.secrets['user_name']}, a mentally ill person, and conducts psychotherapy based on it
 
         # Things to know before writing
         '''
