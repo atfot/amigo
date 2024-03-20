@@ -55,6 +55,7 @@ if language_selection:
         pass
 
 if not language_selection: 
+    st.secrets['korean_mode']=True
     if 'login_error' in st.session_state:
         del st.session_state.login_error
     else:
