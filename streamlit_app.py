@@ -81,7 +81,7 @@ if language_selection=='한국어':
             sleep(0.5)
             st.switch_page("pages/page1.py")
     if 'login_error' in st.session_state:
-        col, col2, col3 = st.columns([2.5,5,2.5])
+        col, col2, col3 = st.columns([2,6,2])
         with col2:
             st.error("유저 이름 또는 패스워드가 맞지 않습니다.")
     if 'login_error' not in st.session_state:
