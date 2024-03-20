@@ -3,12 +3,9 @@ from time import sleep
 
 col1,col2=st.columns([2,8])
 with col1:
-    language_selection=st.selectbox(
-                'Language(언어)',
-                ('한국어','English')
-            )
+    language_selection=st.toggle('한국어/English')
 st.title('')
-if language_selection=='English': 
+if language_selection: 
     col1,col2,col3=st.columns([4,2,4])
     with col2:
         st.title("Neri")
@@ -53,7 +50,7 @@ if language_selection=='English':
     if 'signin' not in st.session_state:
         pass
 
-if language_selection=='한국어': 
+if not language_selection: 
     col1,col2,col3=st.columns([4,2,4])
     with col2:
         st.title("네리")
