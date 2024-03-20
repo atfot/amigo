@@ -125,8 +125,8 @@ if prompt := st.chat_input():
     temperature=1,
     max_tokens=1024,
     top_p=1,
-    frequency_penalty=1,
-    presence_penalty=1
+    frequency_penalty=2,
+    presence_penalty=2
   )
       msg = response.choices[0].message.content
       new_msg = msg[msg.find("**Best response**:") + len("**Best response**:"):msg.find("**Why")].strip().strip('"')
