@@ -7,11 +7,11 @@ welcome_message="What's bothering you? Tell me all about it."
 
 st.write(welcome_message)
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "assistant", "content": welcome_message}]
+    st.session_state["messages"] = [{"role": "Psychotherapist", "content": welcome_message}]
 
 if prompt := st.chat_input():
     client = OpenAI(api_key=st.secrets['api_key'])
-    st.session_state.messages.append({"role": "user", "content": prompt})
+    st.session_state.messages.append({"role": "Mental patient", "content": prompt})
     st.chat_message("user").write(prompt)
     with st.spinner('thinking...'):
       response = client.chat.completions.create(
@@ -105,5 +105,6 @@ if prompt := st.chat_input():
       st.session_state.messages.append({"role": "assistant", "content": new_msg})
       st.chat_message("assistant").write(st.session_state.messages)
       st.write(len(st.session_state.messages))
+      st.write(st.session_state.messages)
       st.chat_message("assistant").write(new_msg)
     
