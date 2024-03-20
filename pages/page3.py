@@ -13,6 +13,7 @@ if prompt := st.chat_input():
     client = OpenAI(api_key=st.secrets['api_key'])
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt)
+    st.write(prompt)
     with st.spinner('thinking...'):
       response = client.chat.completions.create(
     model="gpt-3.5-turbo-16k",
