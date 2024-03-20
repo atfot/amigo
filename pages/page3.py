@@ -7,6 +7,9 @@ st.write("What's bothering you? Tell me all about it.")
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "Psychotherapist", "content": "What's bothering you? Tell me all about it."}]
 
+for msg in st.session_state.messages:
+    st.chat_message(msg["role"]).write(msg["content"])
+
 if prompt := st.chat_input():
     client = OpenAI(api_key=st.secrets['api_key'])
     st.session_state.messages.append({"role": "Mental patient", "content": prompt})
