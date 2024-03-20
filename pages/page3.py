@@ -102,7 +102,7 @@ if prompt := st.chat_input():
   )
       msg = response.choices[0].message.content
       new_msg = msg[msg.find("**Best response**:") + len("**Best response**:"):msg.find("**Why the best response was chosen**:")].strip().strip('"')
-      st.session_state.messages.append({"role": "assistant", "content": new_msg})
+      st.session_state.messages.append({"role": "Psychotherapist", "content": new_msg})
       st.chat_message("assistant").write(st.session_state.messages)
       st.write(len(st.session_state.messages))
       st.write(st.session_state.messages)
