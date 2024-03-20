@@ -4,6 +4,7 @@ import pandas as pd
 if st.session_state.korean_mode==1:
     button=st.button("메인 화면으로")
     if button:
+        del st.session_state.signin
         st.switch_page("streamlit_app.py")
     st.title('')
     st.write(
@@ -79,6 +80,7 @@ if st.session_state.korean_mode==1:
 if st.session_state.korean_mode==0:
     button=st.button("Go to main", "https://neriuut.streamlit.app/")
     if button:
+        del st.session_state.signin
         st.switch_page("streamlit_app.py")
     st.title('')
     st.write(
