@@ -6,6 +6,7 @@ with col1:
     language_selection=st.toggle('한국어/English')
 st.title('')
 if language_selection: 
+    st.session_state['korean_mode']=False
     if 'login_error' in st.session_state:
         del st.session_state.login_error
     else:
@@ -55,7 +56,7 @@ if language_selection:
         pass
 
 if not language_selection: 
-    st.secrets['korean_mode']=True
+    st.session_state['korean_mode']=True
     if 'login_error' in st.session_state:
         del st.session_state.login_error
     else:
