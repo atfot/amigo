@@ -6,6 +6,10 @@ with col1:
     language_selection=st.toggle('한국어/English')
 st.title('')
 if language_selection: 
+    if 'login_error' in st.session_state:
+        del st.session_state.login_error
+    else:
+        pass
     col1,col2,col3=st.columns([4,2,4])
     with col2:
         st.title("Neri")
@@ -51,6 +55,10 @@ if language_selection:
         pass
 
 if not language_selection: 
+    if 'login_error' in st.session_state:
+        del st.session_state.login_error
+    else:
+        pass
     col1,col2,col3=st.columns([4,2,4])
     with col2:
         st.title("네리")
