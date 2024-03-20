@@ -87,9 +87,13 @@ if language_selection=='한국어':
             st.success("성공적으로 로그인 되었습니다!")
             sleep(0.5)
             st.switch_page("pages/page1.py")
+    else:
+        pass
     if st.session_state.signin == True:
         col, col2, col3 = st.columns([3,4,3])
         with col2:
             st.success("성공적으로 로그인 되었습니다!")
             sleep(0.5)
             st.switch_page("pages/signin.py")
+    else:
+        pass
