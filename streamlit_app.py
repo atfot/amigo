@@ -19,7 +19,7 @@ if language_selection=='English':
     username = st.text_input("Username")
     password = st.text_input("Password", type="password")
 
-    col1, col2 = st.columns([8.5,1.5])
+    col1, col2 = st.columns([8.6,1.4])
     with col1:
         if st.button("New User", type="secondary"):
             st.session_state.signin = True
