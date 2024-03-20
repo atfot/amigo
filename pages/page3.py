@@ -16,13 +16,31 @@ if prompt := st.chat_input():
     client = OpenAI(api_key=st.secrets['api_key'])
     st.session_state.messages.append({"role": "Mental patient", "content": prompt})
     st.chat_message("user").write(prompt)
-    with st.spinner('thinking...'):
-      response = client.chat.completions.create(
-    model="gpt-3.5-turbo-16k",
-    messages=[
-      {
-        "role": "system",
-        "content": f"""```
+    if len(st.session_state.messages)>=5:
+        response = client.chat.completions.create(
+        model="gpt-3.5-turbo-16k",
+        messages=[
+          {
+            "role": "system",
+            "content": "Please summarize the conversation below."
+          },
+          {
+            "role": "user",
+            "content": f"{st.session_state.messages}"
+          }
+        ],
+        temperature=1,
+        max_tokens=512,
+        top_p=1,
+        frequency_penalty=0,
+        presence_penalty=0
+        )
+        st.session_state['message_summary'] = response.choices[0].message.content
+        st.session_state['conversations'] = st.session_state.messages[len(st.session_state.messages)-3:]
+    else:
+       st.session_state['message_summary'] = 'Nothing has been written to date, and the conversation starts below.'
+        st.session_state['conversations'] = st.session_state.messages
+    engineered_prompts=f"""```
         # Primary Assistant Guidance
         I'm a playwright, and your goal is to help me write a script for a play. Let's go step-by-step:
 
@@ -63,12 +81,12 @@ if prompt := st.chat_input():
         # My requests
         - This is the context for the conversations I've written so far
         '''
-        Nothing has been written to date, and the conversation starts below.
+        {st.session_state.message_summary}
         '''
 
         - The conversation below is a continuation of the above
         '''        
-        {st.session_state.messages}
+        {st.session_state.conversations}
         '''
 
         - Please read this conversation carefully and respond in the form below.
@@ -90,6 +108,13 @@ if prompt := st.chat_input():
         '''
         ```
   """
+    with st.spinner('thinking...'):
+      response = client.chat.completions.create(
+    model="gpt-3.5-turbo-16k",
+    messages=[
+      {
+        "role": "system",
+        "content": f"{engineered_prompts}"
       },
       {
         "role": "user",
@@ -109,26 +134,5 @@ if prompt := st.chat_input():
       st.write(len(st.session_state.messages))
       st.write(st.session_state.messages)
       st.chat_message("assistant").write(new_msg)
-      if len(st.session_state.messages)==5:
-        response = client.chat.completions.create(
-        model="gpt-3.5-turbo-16k",
-        messages=[
-          {
-            "role": "system",
-            "content": "Please summarize the conversation below."
-          },
-          {
-            "role": "user",
-            "content": f"{st.session_state.messages}"
-          }
-        ],
-        temperature=1,
-        max_tokens=512,
-        top_p=1,
-        frequency_penalty=0,
-        presence_penalty=0
-        )
-        msg = response.choices[0].message.content
-        st.write(msg)
-        st.write(st.session_state.messages[2:])
+      
         
