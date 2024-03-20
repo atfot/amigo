@@ -3,11 +3,9 @@ import streamlit as st
 from navigation import make_sidebar
 
 make_sidebar()
-welcome_message="What's bothering you? Tell me all about it."
-
-st.write(welcome_message)
+st.write("What's bothering you? Tell me all about it.")
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "Psychotherapist", "content": welcome_message}]
+    st.session_state["messages"] = [{"role": "Psychotherapist", "content": "What's bothering you? Tell me all about it."}]
 
 if prompt := st.chat_input():
     client = OpenAI(api_key=st.secrets['api_key'])
