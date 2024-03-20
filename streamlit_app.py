@@ -1,7 +1,7 @@
 import streamlit as st
 from time import sleep
 
-col1,col2,col3=st.columns([3.5,3,3.5])
+col1,col2,col3=st.columns([4,2,4])
 with col2:
     st.title("Neri")
 st.write("Please login (username `test`, password `test`).")
