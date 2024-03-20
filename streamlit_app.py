@@ -23,16 +23,10 @@ if language_selection=='English':
     with col1:
         if st.button("New User", type="secondary"):
             st.session_state.signin = True
-            st.success("Welcome to Neri!")
-            sleep(0.5)
-            st.switch_page("pages/signin.py")
     with col2:
         if st.button("Log in", type="primary"):
             if username == "test" and password == "test":
                 st.session_state.logged_in = True
-                st.success("Logged in successfully!")
-                sleep(0.5)
-                st.switch_page("pages/page1.py")
             else:
                 st.error("Incorrect username or password")
     if 'logged_in' in st.session_state:
@@ -67,16 +61,10 @@ if language_selection=='한국어':
     with col1:
         if st.button("새로 오신 분", type="secondary"):
             st.session_state.signin = True
-            st.success("성공적으로 로그인 되었습니다!")
-            sleep(0.5)
-            st.switch_page("pages/signin.py")
     with col2:
         if st.button("로그인", type="primary"):
             if username == "test" and password == "test":
                 st.session_state.logged_in = True
-                st.success("성공적으로 로그인 되었습니다!")
-                sleep(0.5)
-                st.switch_page("pages/page1.py")
             else:
                 st.error("유저 이름 또는 패스워드가 맞지 않습니다.")
     if 'logged_in' in st.session_state:
