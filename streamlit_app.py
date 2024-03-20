@@ -54,7 +54,7 @@ if language_selection=='한국어':
     with col2:
         st.title("네리")
     st.title('')
-    col1,col2=st.columns([5,5])
+    col1,col2=st.columns([4.5,5.5])
     with col2:
         st.write("로그인해주세요 (유저이름 `test`, 패스워드 `test`).")
     username = st.text_input("유저 이름")
