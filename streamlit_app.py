@@ -53,12 +53,16 @@ if language_selection=='English':
             st.success("Logged in successfully!")
             sleep(0.5)
             st.switch_page("pages/page1.py")
+    if st.session_state.logged_in == False:
+        pass
     if st.session_state.signin == True:
         col, col2, col3 = st.columns([3,4,3])
         with col2:
             st.success("Welcome to Neri!")
             sleep(0.5)
             st.switch_page("pages/signin.py")
+    if st.session_state.signin == False:
+        pass
 
 if language_selection=='한국어': 
     st.session_state['Korean_language']=True
@@ -87,7 +91,7 @@ if language_selection=='한국어':
             st.success("성공적으로 로그인 되었습니다!")
             sleep(0.5)
             st.switch_page("pages/page1.py")
-    else:
+    if st.session_state.logged_in == False:
         pass
     if st.session_state.signin == True:
         col, col2, col3 = st.columns([3,4,3])
@@ -95,5 +99,5 @@ if language_selection=='한국어':
             st.success("성공적으로 로그인 되었습니다!")
             sleep(0.5)
             st.switch_page("pages/signin.py")
-    else:
+    if st.session_state.signin == False:
         pass
