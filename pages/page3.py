@@ -7,9 +7,9 @@ if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "Psychotherapist", "content": "What's bothering you? Tell me all about it."}]
 
 for msg in st.session_state.messages:
-    if msg.role=="Psychotherapist":
+    if msg['role']=="Psychotherapist":
       st.chat_message('assistant').write(msg["content"])
-    if msg.role=="Mental patient":
+    if msg['role']=="Mental patient":
       st.chat_message('user').write(msg["content"])
 
 if prompt := st.chat_input():
