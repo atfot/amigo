@@ -16,7 +16,7 @@ if prompt := st.chat_input():
     client = OpenAI(api_key=st.secrets['api_key'])
     st.session_state.messages.append({"role": "Mental patient", "content": prompt})
     st.chat_message("user").write(prompt)
-    if len(st.session_state.messages)%5==0:
+    if len(st.session_state.messages)%6==0:
         response = client.chat.completions.create(
         model="gpt-3.5-turbo-16k",
         messages=[
@@ -37,7 +37,7 @@ if prompt := st.chat_input():
         )
         st.session_state['message_summary'] = response.choices[0].message.content
         st.session_state['conversations'] = st.session_state.messages[len(st.session_state.messages)-3:]
-    if len(st.session_state.messages)%5!=0:
+    if len(st.session_state.messages)%6!=0:
        st.session_state['message_summary'] = 'Nothing has been written to date, and the conversation starts below.'
        st.session_state['conversations'] = st.session_state.messages
     engineered_prompts=f"""```
