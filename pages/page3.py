@@ -39,7 +39,7 @@ if prompt := st.chat_input():
         st.session_state['conversations'] = st.session_state.messages[len(st.session_state.messages)-3:]
     else:
        st.session_state['message_summary'] = 'Nothing has been written to date, and the conversation starts below.'
-        st.session_state['conversations'] = st.session_state.messages
+       st.session_state['conversations'] = st.session_state.messages
     engineered_prompts=f"""```
         # Primary Assistant Guidance
         I'm a playwright, and your goal is to help me write a script for a play. Let's go step-by-step:
