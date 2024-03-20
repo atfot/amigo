@@ -2,6 +2,13 @@ from openai import OpenAI
 import streamlit as st
 from navigation import make_sidebar
 
+st.set_page_config(
+    page_title="Your AI Therapist, Neri",
+    page_icon="🧊",
+    layout="wide",
+    initial_sidebar_state="collapsed"
+)
+
 make_sidebar()
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "Psychotherapist", "content": "What's bothering you? Tell me all about it."}]

@@ -1,6 +1,13 @@
 import streamlit as st
 from time import sleep
 
+st.set_page_config(
+    page_title="Your AI Therapist, Neri",
+    page_icon="🧊",
+    layout="wide",
+    menu_items=None
+)
+
 col1,col2=st.columns([4,6])
 with col1:
     language_selection=st.toggle('한국어/English')
@@ -37,7 +44,7 @@ if language_selection:
         with col2:
             st.success("Logged in successfully!")
             sleep(0.5)
-            st.switch_page("pages/page1.py")
+            st.switch_page("pages/page3.py")
     if 'logged_in' not in st.session_state:
         pass
     if 'login_error' in st.session_state:
@@ -86,7 +93,7 @@ if not language_selection:
         with col2:
             st.success("성공적으로 로그인 되었습니다!")
             sleep(0.5)
-            st.switch_page("pages/page1.py")
+            st.switch_page("pages/page3.py")
     if 'login_error' in st.session_state:
         col, col2, col3 = st.columns([2,6,2])
         with col2:
