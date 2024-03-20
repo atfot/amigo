@@ -4,7 +4,7 @@ from time import sleep
 st.set_page_config(
     page_title="Your AI Therapist, Neri",
     page_icon="🧊",
-    layout="wide",
+    layout="centered",
     menu_items=None
 )
 
