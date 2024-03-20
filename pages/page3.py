@@ -10,30 +10,7 @@ for msg in st.session_state.messages:
     if msg['role']=="Psychotherapist":
       st.chat_message('assistant').write(msg["content"])
     if msg['role']=="Mental patient":
-      st.chat_message('user').write(msg["content"])
-
-if len(st.session_state.messages)==5:
-   response = client.chat.completions.create(
-    model="gpt-3.5-turbo-16k",
-    messages=[
-      {
-        "role": "system",
-        "content": "Please summarize the conversation below."
-      },
-      {
-        "role": "user",
-        "content": f"{st.session_state.messages}"
-      }
-    ],
-    temperature=1,
-    max_tokens=512,
-    top_p=1,
-    frequency_penalty=0,
-    presence_penalty=0
-   )
-   msg = response.choices[0].message.content
-   st.write(msg)
-   
+      st.chat_message('user').write(msg["content"])   
 
 if prompt := st.chat_input():
     client = OpenAI(api_key=st.secrets['api_key'])
@@ -132,4 +109,25 @@ if prompt := st.chat_input():
       st.write(len(st.session_state.messages))
       st.write(st.session_state.messages)
       st.chat_message("assistant").write(new_msg)
-    
+      if len(st.session_state.messages)==5:
+        response = client.chat.completions.create(
+        model="gpt-3.5-turbo-16k",
+        messages=[
+          {
+            "role": "system",
+            "content": "Please summarize the conversation below."
+          },
+          {
+            "role": "user",
+            "content": f"{st.session_state.messages}"
+          }
+        ],
+        temperature=1,
+        max_tokens=512,
+        top_p=1,
+        frequency_penalty=0,
+        presence_penalty=0
+        )
+        msg = response.choices[0].message.content
+        st.write(msg)
+        
