@@ -16,7 +16,7 @@ if prompt := st.chat_input():
     client = OpenAI(api_key=st.secrets['api_key'])
     st.session_state.messages.append({"role": "Mental patient", "content": prompt})
     st.chat_message("user").write(prompt)
-    st.write(len(st.session_state.messages)%6)
+    ###st.write(len(st.session_state.messages)%6)
     if len(st.session_state.messages)%6==0:
         response = client.chat.completions.create(
         model="gpt-3.5-turbo-16k",
@@ -131,9 +131,9 @@ if prompt := st.chat_input():
       msg = response.choices[0].message.content
       new_msg = msg[msg.find("**Best response**:") + len("**Best response**:"):msg.find("**Why")].strip().strip('"')
       st.session_state.messages.append({"role": "Psychotherapist", "content": new_msg})
-      st.chat_message("assistant").write(msg)
-      st.write(len(st.session_state.messages))
-      st.write(st.session_state.messages)
+      ###st.chat_message("assistant").write(msg)
+      ###st.write(len(st.session_state.messages))
+      ###st.write(st.session_state.messages)
       st.chat_message("assistant").write(new_msg)
       
         
