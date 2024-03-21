@@ -2,6 +2,7 @@ from openai import OpenAI
 import streamlit as st
 from navigation import make_sidebar
 import time
+import re
 
 st.set_page_config(
     page_title="Your AI Therapist, Neri",
@@ -98,13 +99,17 @@ if prompt := st.chat_input():
           - Please read this conversation carefully and respond in the form below.
           **REMEMBER**: Use this form below. **DO NOT USE LINE BREAKS OR SPACES** that are not depicted in the form below.
           '''
-          **What to know before you write**: [Please write down the entire contents of "# Things to know before writing" here]
+          **What to know before you write**: 
+          [Please write down the entire contents of "# Things to know before writing" here]
 
-          **Three psychotherapist's responses**: [Given the above conversation, what are the 3 correct responses from the psychotherapist?]
+          **Three psychotherapist's responses**: 
+          [Given the above conversation, what are the 3 correct responses from the psychotherapist?]
 
-          **Best response**: [1 best response given the above conversation(Show the content by enclosing it in " ", like "the context of Best response". Never display unordered or ordered lists here, except for sentences. Never display role in here, such as Psychotherapist. And never use line breaks or spaces)]
+          **Best response**: 
+          [1 best response given the above conversation(Show the content by enclosing it in " ", like "the context of Best response". Never display unordered or ordered lists here, except for sentences. Never display role in here, such as Psychotherapist. And never use line breaks or spaces)]
 
-          **Why the best response was chosen**: [Why the response selected in **Best response** is the most correct response]
+          **Why the best response was chosen**: 
+          [Why the response selected in **Best response** is the most correct response]
           '''
           ```
       """    
@@ -128,7 +133,8 @@ if prompt := st.chat_input():
   )
       time.sleep(1)
       msg = response.choices[0].message.content
-      new_msg = msg[msg.find("**Best response**:") + len("**Best response**:"):msg.find("*")].strip().strip('"')
+      
+      new_msg = re.search(r'\*\*Best response\*\*: \n"([^"]+)"', msg).group(1)
       st.session_state.messages.append({"role": "Psychotherapist", "content": new_msg})
       st.chat_message("assistant").write(msg)
       st.write(len(st.session_state.messages))
