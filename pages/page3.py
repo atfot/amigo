@@ -132,7 +132,7 @@ if prompt := st.chat_input():
     ],
     temperature=1,
     max_tokens=2048,
-    top_p=1,
+    top_p=0.1,
     frequency_penalty=0.9,
     presence_penalty=1
   )
