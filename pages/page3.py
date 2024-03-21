@@ -110,6 +110,7 @@ if prompt := st.chat_input():
           '''
           ```
       """
+      st.write(st.session_state.message_summary)
       response = client.chat.completions.create(
     model="gpt-3.5-turbo-16k",
     messages=[
