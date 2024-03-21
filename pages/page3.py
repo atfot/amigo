@@ -88,10 +88,6 @@ if prompt := st.chat_input():
         - Make sure you understand the content of "# Information about the play" and "# Character information" before answering
         '''
         ```
-
-        **Background of the conversation**: [{st.session_state.message_summary}]
-
-        **Conversation content**: [{st.session_state.conversations}]
     """
       user_prompt=f"""
           ```
@@ -99,7 +95,7 @@ if prompt := st.chat_input():
           - Please read this conversation carefully and respond in the form below.
           **REMEMBER**: Use this form below. **DO NOT USE LINE BREAKS OR SPACES** that are not depicted in the form below.
           '''
-          **Background of the conversation**: [{st.session_state.message_summary}] 
+          **Background of the conversation**: [{st.session_state.message_summary}]
 
           **Conversation content**: [{st.session_state.conversations}]
 
@@ -113,8 +109,10 @@ if prompt := st.chat_input():
           [Why the response selected in **Best response** is the most correct response]
           '''
           ```
-      """    
-      response = client.chat.completions.create(
+      """
+      st.write(system_prompt)
+      st.write(user_prompt)
+      """response = client.chat.completions.create(
     model="gpt-3.5-turbo-16k",
     messages=[
       {
@@ -134,8 +132,8 @@ if prompt := st.chat_input():
   )
       time.sleep(1)
       msg = response.choices[0].message.content
-      st.chat_message("assistant").write(msg)
-      response = client.chat.completions.create(
+      st.chat_message("assistant").write(msg)"""
+      '''response = client.chat.completions.create(
     model="gpt-3.5-turbo-16k",
     messages=[
       {
@@ -162,6 +160,6 @@ Please only show the sentences from the 'Best response' section of what I provid
       st.session_state.messages.append({"role": "Psychotherapist", "content": new_msg})
       st.chat_message("assistant").write(new_msg)
       st.write(len(st.session_state.messages))
-      st.write(st.session_state.messages)
+      st.write(st.session_state.messages)'''
       
         
