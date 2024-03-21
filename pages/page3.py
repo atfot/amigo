@@ -139,18 +139,22 @@ if prompt := st.chat_input():
     messages=[
       {
         "role": "system",
-        "content": "Please only show the sentences from the 'Best response' section of what I provided, with the quotes removed. Please do not attach any platitudes to the output except for those sentences."
+        "content": "Your role will be to help me pull out sentences within paragraphs."
       },
       {
         "role": "user",
-        "content": f"{msg}"
+        "content": f"""
+Please only show the sentences from the 'Best response' section of what I provided below, with the quotes removed.
+
+{msg}
+"""
       }
     ],
-    temperature=1,
+    temperature=0.2,
     max_tokens=15500,
-    top_p=1,
-    frequency_penalty=1,
-    presence_penalty=1
+    top_p=0.1,
+    frequency_penalty=0,
+    presence_penalty=0
   )
       
       new_msg = response.choices[0].message.content
