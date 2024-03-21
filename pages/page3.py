@@ -134,16 +134,26 @@ if prompt := st.chat_input():
       time.sleep(1)
       msg = response.choices[0].message.content
       st.chat_message("assistant").write(msg)
-      try: 
-        new_msg = re.search(r'\*\*Best response\*\*: \n"([^"]+)"', msg).group(1)
-      except:
-         try:
-          new_msg = re.search(r'\*\*Best response\*\*:\n"([^"]+)"', msg).group(1)
-         except:
-           start_index = msg.find("Best response:") + len("Best response:")
-           end_index = msg.find("Why the best response was chosen:")
-           new_msg = msg[start_index:end_index].strip()
-           new_msg = new_msg.replace('"', '')
+      response = client.chat.completions.create(
+    model="gpt-3.5-turbo-16k",
+    messages=[
+      {
+        "role": "system",
+        "content": "Please only show the sentences from the 'Best response' section of what I provided, with the quotes removed. Please do not attach any platitudes to the output except for those sentences."
+      },
+      {
+        "role": "user",
+        "content": f"{msg}"
+      }
+    ],
+    temperature=1,
+    max_tokens=15500,
+    top_p=1,
+    frequency_penalty=1,
+    presence_penalty=1
+  )
+      
+      new_msg = response.choices[0].message.content
       st.session_state.messages.append({"role": "Psychotherapist", "content": new_msg})
       st.chat_message("assistant").write(new_msg)
       st.write(len(st.session_state.messages))
