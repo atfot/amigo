@@ -157,7 +157,7 @@ Please only show the sentences from the 'Best response' section of what I provid
     presence_penalty=0
   )
       
-      new_msg = response.choices[0].message.content
+      new_msg = response.choices[0].message.content.strip('"')
       st.session_state.messages.append({"role": "Psychotherapist", "content": new_msg})
       st.chat_message("assistant").write(new_msg)
       st.write(len(st.session_state.messages))
