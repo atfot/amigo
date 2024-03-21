@@ -89,24 +89,14 @@ if prompt := st.chat_input():
         '''
 
         # My requests
-        - This is the context for the conversations I've written so far
-        '''
-        {st.session_state.message_summary}
-        '''
-
-        - The conversation below is a continuation of the above
-        '''        
-        {st.session_state.conversations}
-        '''
-
         - Please read this conversation carefully and respond in the form below.
         **REMEMBER**: Use this form below. Do not use line breaks or spaces that are not depicted in the form below.
         '''
         **What to know before you write**: [Please write down the entire contents of "# Things to know before writing" here]
 
-        **Background of the conversation**: [The entire background of the conversations I've written so far]
+        **Background of the conversation**: [{st.session_state.message_summary}]
 
-        **Conversation content**: [All conversations up to this point]
+        **Conversation content**: [{st.session_state.conversations}]
 
         **Three psychotherapist's responses**: [Given the above conversation, what are the 3 correct responses from the psychotherapist?]
 
