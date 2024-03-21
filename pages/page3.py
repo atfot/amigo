@@ -134,7 +134,13 @@ if prompt := st.chat_input():
       time.sleep(1)
       msg = response.choices[0].message.content
       st.chat_message("assistant").write(msg)
-      new_msg = re.search(r'\*\*Best response\*\*: \n"([^"]+)"', msg).group(1)
+      try: 
+        new_msg = re.search(r'\*\*Best response\*\*: \n"([^"]+)"', msg).group(1)
+      except:
+         start_index = conversation.find("Best response:") + len("Best response:")
+         end_index = conversation.find("Why the best response was chosen:")
+         new_msg = conversation[start_index:end_index].strip()
+         new_msg = best_response.replace('"', '')
       st.session_state.messages.append({"role": "Psychotherapist", "content": new_msg})
       st.chat_message("assistant").write(new_msg)
       st.write(len(st.session_state.messages))
