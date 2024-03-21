@@ -92,7 +92,7 @@ if prompt := st.chat_input():
           ```
           # My requests
           - Please read this conversation carefully and respond in the form below.
-          **REMEMBER**: Use this form below. Do not use line breaks or spaces that are not depicted in the form below.
+          **REMEMBER**: Use this form below. **DO NOT USE LINE BREAKS OR SPACES** that are not depicted in the form below.
           '''
           **What to know before you write**: [Please write down the entire contents of "# Things to know before writing" here]
 
