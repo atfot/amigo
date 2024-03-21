@@ -120,7 +120,7 @@ if prompt := st.chat_input():
         "content": f"{user_prompt}"
       }
     ],
-    temperature=1,
+    temperature=0.1,
     max_tokens=15500,
     top_p=1,
     frequency_penalty=1,
@@ -128,11 +128,11 @@ if prompt := st.chat_input():
   )
       time.sleep(1)
       msg = response.choices[0].message.content
-      new_msg = msg[msg.find("**Best response**:") + len("**Best response**:"):msg.find("\n")].strip().strip('"')
+      new_msg = msg[msg.find("**Best response**:") + len("**Best response**:"):msg.find("**Why")].strip().strip('"')
       st.session_state.messages.append({"role": "Psychotherapist", "content": new_msg})
-      st.chat_message("assistant").write(msg)
-      st.write(len(st.session_state.messages))
-      st.write(st.session_state.messages)
+      #st.chat_message("assistant").write(msg)
+      #st.write(len(st.session_state.messages))
+      #st.write(st.session_state.messages)
       st.chat_message("assistant").write(new_msg)
       
         
