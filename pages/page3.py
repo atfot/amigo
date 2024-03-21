@@ -141,7 +141,7 @@ if prompt := st.chat_input():
       {
         "role": "user",
         "content": f"""
-Please only show the sentences from the '**Best response**:' section of what I provided below, with the quotes removed. Keep in mind that this is not the "**Why the best response was chosen**:" part.
+Please only show the sentences from the '**Best response**:' section of what I provided below, with the quotes removed. Keep in mind that you should not seek answers from the "**Why the best response was chosen**:" part.
 
 {msg}
 """
