@@ -56,7 +56,7 @@ if prompt := st.chat_input():
         # Information about the play
         - Conversation between one mentally ill person and one psychotherapist
         - The two are now meeting and talking online
-        - Psychologist uses the most respectful tone of voice possible, and the person with mental illness prefer it
+        - Psychologist uses the most respectful tone of voice possible, and the person with mental illness prefers it
         - Person with mental illness want empathy and comfort for him/herself
         - The psychotherapist wants to heal the mentally ill person by building a strong relationship with them
 
@@ -127,7 +127,7 @@ if prompt := st.chat_input():
       },
       {
         "role": "user",
-        "content": f"{st.session_state.conversations}"
+        "content": f"{prompt}"
       }
     ],
     temperature=1,
