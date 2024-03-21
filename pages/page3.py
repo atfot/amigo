@@ -103,7 +103,7 @@ if prompt := st.chat_input():
           [Given the above conversation, what are the 3 correct responses from the psychotherapist?]
 
           **Best response**: 
-          [1 best response given the above conversation(Show the content by enclosing it in " ", like "the context of Best response". Never display unordered or ordered lists here, except for sentences. Never display role in here, such as Psychotherapist. And never use line breaks or spaces)]
+          [1 best response given the above conversation(Show the content by enclosing it in " ", like "the context of Best response". Never attach any descriptions or platitudes to this part except for the result sentence.)]
 
           **Why the best response was chosen**: 
           [Why the response selected in **Best response** is the most correct response]
