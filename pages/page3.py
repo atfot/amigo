@@ -49,7 +49,7 @@ if prompt := st.chat_input():
     if len(st.session_state.messages)%6!=0:
        st.session_state['message_summary'] = 'Nothing has been written to date, and the conversation starts below.'
        st.session_state['conversations'] = st.session_state.messages
-    system_prompts=f"""```
+    system_prompt=f"""```
         # Primary Assistant Guidance
         Your goal is to help me, the playwright, write a script for a play. Let's go step-by-step:
 
@@ -89,7 +89,7 @@ if prompt := st.chat_input():
         '''
         ```
   """
-    user_prompts=f"""```
+    user_prompt=f"""```
         # My requests
         - Please read this conversation carefully and respond in the form below.
         **REMEMBER**: Use this form below. Do not use line breaks or spaces that are not depicted in the form below.
@@ -115,7 +115,7 @@ if prompt := st.chat_input():
     messages=[
       {
         "role": "system",
-        "content": f"{system_prompts}"
+        "content": f"{system_prompt}"
       },
       {
         "role": "user",
