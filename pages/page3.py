@@ -90,29 +90,29 @@ if prompt := st.chat_input():
         '''
         ```
     """
-    user_prompt=f"""
-        ```
-        # My requests
-        - Please read this conversation carefully and respond in the form below.
-        **REMEMBER**: Use this form below. Do not use line breaks or spaces that are not depicted in the form below.
-        '''
-        **What to know before you write**: [Please write down the entire contents of "# Things to know before writing" here]
+      user_prompt=f"""
+          ```
+          # My requests
+          - Please read this conversation carefully and respond in the form below.
+          **REMEMBER**: Use this form below. Do not use line breaks or spaces that are not depicted in the form below.
+          '''
+          **What to know before you write**: [Please write down the entire contents of "# Things to know before writing" here]
 
-        **Background of the conversation**: [{st.session_state.message_summary}]
+          **Background of the conversation**: [{st.session_state.message_summary}]
 
-        **Conversation content**: [{st.session_state.conversations}]
+          **Conversation content**: [{st.session_state.conversations}]
 
-        **Three psychotherapist's responses**: [Given the above conversation, what are the 3 correct responses from the psychotherapist?]
+          **Three psychotherapist's responses**: [Given the above conversation, what are the 3 correct responses from the psychotherapist?]
 
-        **Best response**: [1 best response given the above conversation(Show the content by enclosing it in " ", like "the context of Best response". Never display unordered or ordered lists here, except for sentences. Also never display role in here, such as Psychotherapist.)]
+          **Best response**: [1 best response given the above conversation(Show the content by enclosing it in " ", like "the context of Best response". Never display unordered or ordered lists here, except for sentences. Also never display role in here, such as Psychotherapist.)]
 
-        **Why the best response was chosen**: [Why the response selected in **Best response** is the most correct response]
+          **Why the best response was chosen**: [Why the response selected in **Best response** is the most correct response]
 
-        **Did you follow the instructions?**: [Please provide detailed proof of your understanding of **What to know before you write**]
-        '''
-        ```
-    """    
-    st.write(user_prompt)
+          **Did you follow the instructions?**: [Please provide detailed proof of your understanding of **What to know before you write**]
+          '''
+          ```
+      """    
+      st.write(user_prompt)
       response = client.chat.completions.create(
     model="gpt-3.5-turbo-16k",
     messages=[
