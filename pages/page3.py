@@ -94,7 +94,7 @@ if prompt := st.chat_input():
           ```
           # My requests
           - Please read this conversation carefully and respond in the form below.
-          **REMEMBER**: Do not use line breaks or spaces that are not depicted in the form below.
+          **REMEMBER**: Use this form below. Do not use line breaks or spaces that are not depicted in the form below.
           '''
           **What to know before you write**: [Please write down the entire contents of "# Things to know before writing" here]
 
@@ -132,7 +132,7 @@ if prompt := st.chat_input():
   )
       time.sleep(1)
       msg = response.choices[0].message.content
-      new_msg = msg[msg.find("**Best response**:") + len("**Best response**:"):msg.find("**Why")].strip().strip('"')
+      new_msg = msg[msg.find("**Best response**:"):msg.find("**Why")].strip().strip('"')
       st.session_state.messages.append({"role": "Psychotherapist", "content": new_msg})
       st.chat_message("assistant").write(msg)
       st.write(len(st.session_state.messages))
