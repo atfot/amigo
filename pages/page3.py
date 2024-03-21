@@ -150,7 +150,7 @@ Please only show the sentences from the 'Best response' section of what I provid
 """
       }
     ],
-    temperature=0.2,
+    temperature=0.1,
     max_tokens=2048,
     top_p=0.1,
     frequency_penalty=0,
