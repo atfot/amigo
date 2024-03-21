@@ -87,6 +87,10 @@ if prompt := st.chat_input():
         - Make sure you understand the content of "# Information about the play" and "# Character information" before answering
         '''
         ```
+
+        **Background of the conversation**: [{st.session_state.message_summary}]
+
+        **Conversation content**: [{st.session_state.conversations}]
     """
       user_prompt=f"""
           ```
@@ -95,10 +99,6 @@ if prompt := st.chat_input():
           **REMEMBER**: Use this form below. **DO NOT USE LINE BREAKS OR SPACES** that are not depicted in the form below.
           '''
           **What to know before you write**: [Please write down the entire contents of "# Things to know before writing" here]
-
-          **Background of the conversation**: [{st.session_state.message_summary}]
-
-          **Conversation content**: [{st.session_state.conversations}]
 
           **Three psychotherapist's responses**: [Given the above conversation, what are the 3 correct responses from the psychotherapist?]
 
