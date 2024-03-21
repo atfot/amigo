@@ -140,6 +140,5 @@ if prompt := st.chat_input():
       st.chat_message("assistant").write(msg)
       st.write(len(st.session_state.messages))
       st.write(st.session_state.messages)
-      st.chat_message("assistant").write(new_msg)
       
         
