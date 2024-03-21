@@ -88,7 +88,7 @@ if prompt := st.chat_input():
         - Make sure you understand the content of "# Information about the play" and "# Character information" before answering
         '''
         ```
-  """
+    """
     user_prompt=f"""```
         # My requests
         - Please read this conversation carefully and respond in the form below.
@@ -108,7 +108,7 @@ if prompt := st.chat_input():
 
         **Did you follow the instructions?**: [Please provide detailed proof of your understanding of **What to know before you write**]
         '''
-"""
+    """
     with st.spinner('thinking...'):
       response = client.chat.completions.create(
     model="gpt-3.5-turbo-16k",
