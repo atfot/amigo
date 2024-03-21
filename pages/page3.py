@@ -97,7 +97,7 @@ if prompt := st.chat_input():
           '''
           **Background of the conversation**: [{st.session_state.message_summary}]
 
-          **Conversation content**: [{st.session_state.conversations}]
+          **Conversation content**: [Please rewrite the content below in a 'role : content' way, like 'Mental Patient : content'. {st.session_state.conversations}]
 
           **Three psychotherapist's responses**: 
           [Given the above conversation, what are the 3 correct responses from the psychotherapist?]
@@ -123,7 +123,7 @@ if prompt := st.chat_input():
       }
     ],
     temperature=1,
-    max_tokens=2048,
+    max_tokens=1024,
     top_p=0.9,
     frequency_penalty=1,
     presence_penalty=1
