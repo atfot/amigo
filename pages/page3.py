@@ -92,13 +92,11 @@ if prompt := st.chat_input():
       user_prompt=f"""
           ```
           # My requests
-          - Please read this conversation carefully and respond in the form below.
-          **REMEMBER**: Use this form below. **DO NOT USE LINE BREAKS OR SPACES** that are not depicted in the form below.
-          '''
-          **Summary of the conversation**: [The following summarizes the background of our conversation so far; please write it down verbatim. {st.session_state.message_summary}]
+          - Please read this conversation step by step and respond in the form below.
+          - Summary of the conversation: {st.session_state.message_summary}
+          - Conversation content: {st.session_state.conversations}
 
-          **Conversation content**: [Please rewrite the content below in a 'role : content' way, like 'Mental Patient : content'. {st.session_state.conversations}]
-
+          '''                  
           **Three psychotherapist's responses**: 
           [Given the above conversation, what are the 3 correct responses from the psychotherapist?]
 
@@ -108,6 +106,8 @@ if prompt := st.chat_input():
           **Why the best response was chosen**: 
           [Why the response selected in **Best response** is the most correct response]
           '''
+
+          **REMEMBER**: Use this form below. **DO NOT USE LINE BREAKS OR SPACES** that are not depicted in the form below.
           ```
       """
       response = client.chat.completions.create(
