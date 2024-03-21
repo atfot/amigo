@@ -49,9 +49,9 @@ if prompt := st.chat_input():
     if len(st.session_state.messages)%6!=0:
        st.session_state['message_summary'] = 'Nothing has been written to date, and the conversation starts below.'
        st.session_state['conversations'] = st.session_state.messages
-    engineered_prompts=f"""```
+    system_prompts=f"""```
         # Primary Assistant Guidance
-        I'm a playwright, and your goal is to help me write a script for a play. Let's go step-by-step:
+        Your goal is to help me, the playwright, write a script for a play. Let's go step-by-step:
 
         # Information about the play
         - Conversation between one mentally ill person and one psychotherapist
@@ -87,7 +87,9 @@ if prompt := st.chat_input():
         - The mentally ill person could give extremely short answers to the psychotherapist because they are talking online, so psychotherapist must continue the conversation considering the previous conversations.
         - Make sure you understand the content of "# Information about the play" and "# Character information" before answering
         '''
-
+        ```
+  """
+    user_prompts=f"""```
         # My requests
         - Please read this conversation carefully and respond in the form below.
         **REMEMBER**: Use this form below. Do not use line breaks or spaces that are not depicted in the form below.
@@ -106,23 +108,22 @@ if prompt := st.chat_input():
 
         **Did you follow the instructions?**: [Please provide detailed proof of your understanding of **What to know before you write**]
         '''
-        ```
-  """
+"""
     with st.spinner('thinking...'):
       response = client.chat.completions.create(
     model="gpt-3.5-turbo-16k",
     messages=[
       {
         "role": "system",
-        "content": f"{engineered_prompts}"
+        "content": f"{system_prompts}"
       },
       {
         "role": "user",
-        "content": f"{prompt}"
+        "content": f"{user_prompt}"
       }
     ],
     temperature=0.4,
-    max_tokens=8192,
+    max_tokens=15500,
     top_p=1,
     frequency_penalty=1,
     presence_penalty=1
