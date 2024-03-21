@@ -105,8 +105,6 @@ if prompt := st.chat_input():
           **Best response**: [1 best response given the above conversation(Show the content by enclosing it in " ", like "the context of Best response". Never display unordered or ordered lists here, except for sentences. Also never display role in here, such as Psychotherapist.)]
 
           **Why the best response was chosen**: [Why the response selected in **Best response** is the most correct response]
-
-          **Did you follow the instructions?**: [Please provide detailed proof of your understanding of **What to know before you write**]
           '''
           ```
       """    
