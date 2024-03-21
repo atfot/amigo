@@ -78,7 +78,7 @@ if prompt := st.chat_input():
 
         # Things to know before writing
         '''
-        - Psychotherapist only expresses information from mentally ill people indirectly
+        - Psychotherapist only expresses information from mentally ill people and himself indirectly
         - Every answer of the psychotherapist should begin and end with different expressions
         - The psychotherapist's answer should be completely different from the psychotherapist's answer in the previous conversation
         - Keep in mind that the psychotherapist's response is part of the conversation and will be followed by the mentally ill person's response
