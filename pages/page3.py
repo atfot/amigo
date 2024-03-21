@@ -78,12 +78,13 @@ if prompt := st.chat_input():
 
         # Things to know before writing
         '''
-        - Psychotherapist only expresses information from mentally ill people and himself indirectly
+        - Psychotherapist only expresses information from mentally ill person and himself indirectly
         - Every answer of the psychotherapist should begin and end with different expressions
         - The psychotherapist's answer should be completely different from the psychotherapist's answer in the previous conversation
         - Keep in mind that the psychotherapist's response is part of the conversation and will be followed by the mentally ill person's response
         - The psychotherapist's response should fit the tone and content of the conversation
         - The psychotherapist is talking to only one person with a mental illness(Check the "# Character information")
+        - The mentally ill person could give extremely short answers to the psychotherapist because they are talking online, so psychotherapist must continue the conversation considering the previous conversations.
         - Make sure you understand the content of "# Information about the play" and "# Character information" before answering
         '''
 
@@ -130,7 +131,7 @@ if prompt := st.chat_input():
         "content": f"{prompt}"
       }
     ],
-    temperature=0.1,
+    temperature=0.2,
     max_tokens=4096,
     top_p=1,
     frequency_penalty=1,
