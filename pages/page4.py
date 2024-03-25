@@ -93,11 +93,12 @@ if prompt := st.chat_input():
       user_prompt_1=f"""
           ```
           # My requests
-          - Please read this conversation step by step and respond in the form below.
+          - Please read the form below carefully and answer the questions in the exact format below.
+          
+          '''
           - Summary of the conversation: {st.session_state.message_summary}
           - Conversation content: {st.session_state.conversations}
 
-          '''                  
           **Three psychotherapist's responses**: 
           [Given the above conversation, what are the 3 correct responses from the psychotherapist?]
 
