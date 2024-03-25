@@ -124,9 +124,9 @@ if prompt := st.chat_input():
         "content": f"{user_prompt_1}"
       }
     ],
-    temperature=0.4,
+    temperature=0.5,
     max_tokens=512,
-    top_p=0.4,
+    top_p=0.5,
     frequency_penalty=0.4,
     presence_penalty=0.4
   )
