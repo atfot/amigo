@@ -49,12 +49,10 @@ if prompt := st.chat_input():
         )
         st.session_state['message_summary'] = summary.choices[0].message.content
         st.session_state['conversations'] = st.session_state.messages[-3:]
-    else:
-       if summary:
+    if len(st.session_state.messages)>6:
+       if len(st.session_state.messages)%6!=0:
           st.session_state['message_summary'] = summary.choices[0].message.content
           st.session_state['conversations'] = st.session_state.messages
-       else:
-          pass
     with st.spinner('thinking...'):
       system_prompt=f"""```
         # Primary Assistant Guidance
