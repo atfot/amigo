@@ -96,8 +96,8 @@ if prompt := st.chat_input():
           - Please read the form below carefully and answer the questions in the exact format below.
           
           '''
-          - Summary of the conversation: {st.session_state.message_summary}
-          - Conversation content: {st.session_state.conversations}
+          **Summary of the conversation**: [{st.session_state.message_summary}]
+          **Conversation content**: [{st.session_state.conversations}]
 
           **Three psychotherapist's responses**: 
           [Given the above conversation, what are the 3 correct responses from the psychotherapist?]
