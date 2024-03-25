@@ -126,8 +126,8 @@ if prompt := st.chat_input():
     temperature=0.2,
     max_tokens=1024,
     top_p=0.2,
-    frequency_penalty=0.1,
-    presence_penalty=0.1
+    frequency_penalty=0.2,
+    presence_penalty=0.2
   )
       time.sleep(1)
       msg = response.choices[0].message.content
@@ -151,8 +151,8 @@ Please only show the sentences from the '**Best response**:' section of what I p
     temperature=0.1,
     max_tokens=2048,
     top_p=1,
-    frequency_penalty=1,
-    presence_penalty=1
+    frequency_penalty=0,
+    presence_penalty=0
   )
       
       new_msg = response.choices[0].message.content.strip('"')
