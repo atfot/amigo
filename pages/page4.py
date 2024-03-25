@@ -1,2 +1,2 @@
 import streamlit as st
-st.write(new one)
+st.write('new page')
