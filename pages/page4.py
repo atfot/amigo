@@ -103,9 +103,7 @@ if prompt := st.chat_input():
           [Show me what is the important things that you need to consider for choosing the best response]
 
           **Best response**: 
-          [1 best response given the above conversation(The output should follow this format-
-          **Best response**: "1 best response given the above conversation"
-          )]
+          [1 best response given the above conversation(Show the content by enclosing it in " ")]
           '''
 
           **REMEMBER**: Use this form below. **DO NOT USE LINE BREAKS OR SPACES** that are not depicted in the form below.
