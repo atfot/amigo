@@ -25,8 +25,11 @@ if prompt := st.chat_input():
     client = OpenAI(api_key=st.secrets['api_key'])
     st.session_state.messages.append({"role": "Mental patient", "content": prompt})
     st.chat_message("user").write(prompt)
+    if len(st.session_state.messages)<6:
+       st.session_state['message_summary'] = 'Nothing has been written to date, and the conversation starts below.'
+       st.session_state['conversations'] = st.session_state.messages
     if len(st.session_state.messages)%6==0:
-        response = client.chat.completions.create(
+        summary = client.chat.completions.create(
         model="gpt-3.5-turbo-16k",
         messages=[
           {
@@ -44,10 +47,10 @@ if prompt := st.chat_input():
         frequency_penalty=0,
         presence_penalty=0
         )
-        st.session_state['message_summary'] = response.choices[0].message.content
+        st.session_state['message_summary'] = summary.choices[0].message.content
         st.session_state['conversations'] = st.session_state.messages[-3:]
-    if len(st.session_state.messages)<6:
-       st.session_state['message_summary'] = 'Nothing has been written to date, and the conversation starts below.'
+    else:
+       st.session_state['message_summary'] = summary.choices[0].message.content
        st.session_state['conversations'] = st.session_state.messages
     with st.spinner('thinking...'):
       system_prompt=f"""```
@@ -130,7 +133,7 @@ if prompt := st.chat_input():
   )
       time.sleep(1)
       msg = response.choices[0].message.content
-      response = client.chat.completions.create(
+      sentence_selection = client.chat.completions.create(
     model="gpt-3.5-turbo-16k",
     messages=[
       {
@@ -153,7 +156,7 @@ Please only show the sentences from the '**Best response**:' section of what I p
     presence_penalty=0
   )
       
-      new_msg = response.choices[0].message.content.strip('"')
+      new_msg = sentence_selection.choices[0].message.content.strip('"')
       st.session_state.messages.append({"role": "Psychotherapist", "content": new_msg})
       st.chat_message("assistant").write(new_msg)
       st.write(user_prompt_1)
