@@ -83,7 +83,7 @@ if prompt := st.chat_input():
         - Keep in mind that the psychotherapist's response is part of the conversation and will be followed by the mentally ill person's response
         - The psychotherapist's response should fit the tone and content of the conversation
         - The psychotherapist is talking to only one person with a mental illness(Check the "# Character information")
-        - The mentally ill person could give extremely short answers to the psychotherapist because they are talking online, so psychotherapist must continue the conversation by using some questions considering the previous conversations.
+        - The mentally ill person could give extremely short answers to the psychotherapist because they are talking online, so psychotherapist must continue the conversation by **using some questions** considering the previous conversations.
         - Make sure you understand the content of "# Information about the play" and "# Character information" before answering
         '''
         ```
