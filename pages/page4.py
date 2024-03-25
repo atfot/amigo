@@ -126,8 +126,8 @@ if prompt := st.chat_input():
     temperature=0.3,
     max_tokens=512,
     top_p=0.3,
-    frequency_penalty=0.2,
-    presence_penalty=0.2
+    frequency_penalty=0.3,
+    presence_penalty=0.3
   )
       time.sleep(1)
       msg = response.choices[0].message.content
