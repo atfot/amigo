@@ -50,7 +50,7 @@ if prompt := st.chat_input():
         st.session_state['message_summary'] = summary.choices[0].message.content
         st.session_state['conversations'] = st.session_state.messages[-3:]
     if len(st.session_state.messages)>6:
-       if len(st.session_state.messages)%6!=0:       
+       if len(st.session_state.messages)%6!=0:
           st.session_state.conversations.append({"role": "Mental patient", "content": prompt})
     with st.spinner('thinking...'):
       system_prompt=f"""```
@@ -160,10 +160,10 @@ Please only show the sentences from the '**Best response**:' section of what I p
       
       new_msg = sentence_selection.choices[0].message.content.strip('"')
       st.session_state.messages.append({"role": "Psychotherapist", "content": new_msg})
-      st.chat_message("assistant").write(new_msg)
       if len(st.session_state.messages)>6:
-         if len(st.session_state.messages)%6!=0: 
-            st.session_state.conversations.append({"role": "Psychotherapist", "content": new_msg})
+       if len(st.session_state.messages)%6!=0:
+          st.session_state.conversations.append({"role": "Psychotherapist", "content": new_msg})
+      st.chat_message("assistant").write(new_msg)
       st.write(user_prompt_1)
       st.chat_message("assistant").write(msg)
       st.write(len(st.session_state.messages))
