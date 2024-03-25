@@ -45,7 +45,7 @@ if prompt := st.chat_input():
         presence_penalty=0
         )
         st.session_state['message_summary'] = response.choices[0].message.content
-        st.session_state['conversations'] = st.session_state.messages[len(x)-3:]
+        st.session_state['conversations'] = st.session_state.messages[-3:]
     if len(st.session_state.messages)<6:
        st.session_state['message_summary'] = 'Nothing has been written to date, and the conversation starts below.'
        st.session_state['conversations'] = st.session_state.messages
