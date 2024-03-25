@@ -104,7 +104,7 @@ if prompt := st.chat_input():
 
           **Best response**: 
           [1 best response given the above conversation(The output should follow this format-
-          **Best response**: "Your pick for the best response"
+          **Best response**: "1 best response given the above conversation"
           )]
           '''
 
