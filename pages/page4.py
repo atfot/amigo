@@ -86,8 +86,8 @@ if prompt := st.chat_input():
         - Psychotherapist only expresses information from mentally ill person and himself indirectly
         - Keep in mind that the psychotherapist's response is part of the conversation and will be followed by the mentally ill person's response
         - The psychotherapist's response should fit the tone and content of the conversation
+        - If mental patient's reply is too short, you need to ask some questions to understand what is going on inside his/her mind
         - The psychotherapist is talking to only one person with a mental illness(Check the "# Character information")
-        - The mentally ill person could give extremely short answers to the psychotherapist because they are talking online, so psychotherapist must continue the conversation by using some questions considering the previous conversations.
         - Make sure you understand the content of "# Information about the play" and "# Character information" before answering
         '''
         ```
@@ -111,7 +111,9 @@ if prompt := st.chat_input():
           [Choose the best answer from the "Three psychotherapist's responses" above and write it down. it should be **sentences** covered with quotes]
           '''
 
-          **REMEMBER**: Use this form below. **DO NOT USE LINE BREAKS OR SPACES** that are not depicted in the form below.
+          **REMEMBER**: 
+          - Use this form below. 
+          - **DO NOT USE LINE BREAKS OR SPACES** that are not depicted in the form below.
           ```
       """
       response = client.chat.completions.create(
