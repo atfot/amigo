@@ -49,8 +49,6 @@ if prompt := st.chat_input():
     if len(st.session_state.messages)<6:
        st.session_state['message_summary'] = 'Nothing has been written to date, and the conversation starts below.'
        st.session_state['conversations'] = st.session_state.messages
-    else:
-       pass
     with st.spinner('thinking...'):
       system_prompt=f"""```
         # Primary Assistant Guidance
