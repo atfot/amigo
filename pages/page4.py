@@ -129,6 +129,7 @@ if prompt := st.chat_input():
   )
       time.sleep(1)
       msg = response.choices[0].message.content
+      st.write(user_prompt_1)
       st.chat_message("assistant").write(msg)
       response = client.chat.completions.create(
     model="gpt-3.5-turbo-16k",
