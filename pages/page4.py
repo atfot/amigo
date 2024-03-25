@@ -132,8 +132,6 @@ if prompt := st.chat_input():
   )
       time.sleep(1)
       msg = response.choices[0].message.content
-      st.write(user_prompt_1)
-      st.chat_message("assistant").write(msg)
       response = client.chat.completions.create(
     model="gpt-3.5-turbo-16k",
     messages=[
@@ -160,6 +158,8 @@ Please only show the sentences from the '**Best response**:' section of what I p
       new_msg = response.choices[0].message.content.strip('"')
       st.session_state.messages.append({"role": "Psychotherapist", "content": new_msg})
       st.chat_message("assistant").write(new_msg)
+      st.write(user_prompt_1)
+      st.chat_message("assistant").write(msg)
       st.write(len(st.session_state.messages))
       st.write(st.session_state.messages)
       
