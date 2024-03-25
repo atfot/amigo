@@ -122,11 +122,11 @@ if prompt := st.chat_input():
         "content": f"{user_prompt_1}"
       }
     ],
-    temperature=0.8,
+    temperature=0.9,
     max_tokens=512,
-    top_p=0.8,
-    frequency_penalty=0.8,
-    presence_penalty=0.8
+    top_p=0.9,
+    frequency_penalty=0.9,
+    presence_penalty=0.9
   )
       time.sleep(1)
       msg = response.choices[0].message.content
