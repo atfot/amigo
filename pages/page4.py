@@ -84,7 +84,7 @@ if prompt := st.chat_input():
       - Keep in mind that the psychotherapist's response is part of the conversation and will be followed by the mentally ill person's response
       - The psychotherapist's response should fit the tone and content of the conversation
       - If mental patient's reply is too short, you need to ask some questions to understand what is going on inside his/her mind
-      - If you get a very short answer from the mental patient, ask him/her a related question, but don't ask how he/she feel.
+      - If you get a very short answer from the mental patient, ask him/her a related question, but don't directly ask how he/she feel.
       - The psychotherapist is talking to only one person with a mental illness(Check the "# Character information")
       - Make sure you understand the content of "# Information about the play" and "# Character information" before answering
       '''
