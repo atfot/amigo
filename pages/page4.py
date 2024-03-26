@@ -101,12 +101,10 @@ if prompt := st.chat_input():
         **Conversation content**: [{st.session_state.conversations}]
 
         **Three possible answers from a psychotherapist**: 
-        [Given the above conversation, what are the 3 correct responses from the psychotherapist? 
-        - If you have to give a very short answer, ask the mental patient a question related to him.]
+        [Given the above conversation, what are the 3 correct responses from the psychotherapist? If you get a very short answer, ask the mental patient a question related to him/her.]
 
         **Best response**: 
-        [From the "**Three possible answers from a psychotherapist**:" you wrote above, pick the best one and write it down. 
-        - It should be **sentences** covered with quotes.]
+        [From the "**Three possible answers from a psychotherapist**:" you wrote above, pick the best one and write it down. It should be **sentences** covered with quotes.]
 
         **Why the best response was chosen**: 
         [Why the response selected in **Best response** is the most correct response]
@@ -136,9 +134,9 @@ if prompt := st.chat_input():
   frequency_penalty=0.9,
   presence_penalty=0.9
 )
-    my_bar.progress(30,text=progress_text)
-    msg = response.choices[0].message.content
     my_bar.progress(40,text=progress_text)
+    msg = response.choices[0].message.content
+    my_bar.progress(50,text=progress_text)
     sentence_selection = client.chat.completions.create(
   model="gpt-3.5-turbo-16k",
   messages=[
@@ -152,7 +150,6 @@ if prompt := st.chat_input():
 Please only show the sentences from the '**Best response**:' section of what I provided below, with the quotes, or "" removed.
 -  Keep in mind that you should not seek answers from the "**What should you consider for the best response**:" part. 
 - Submit only **sentences** as output.
-- 
 
 {msg}
 """
@@ -164,11 +161,11 @@ Please only show the sentences from the '**Best response**:' section of what I p
   frequency_penalty=0,
   presence_penalty=0
 )
-    my_bar.progress(50,text=progress_text)
-    new_msg = sentence_selection.choices[0].message.content.strip('"')
-    my_bar.progress(60,text=progress_text)
-    st.session_state.messages.append({"role": "Psychotherapist", "content": new_msg})
     my_bar.progress(70,text=progress_text)
+    new_msg = sentence_selection.choices[0].message.content.strip('"')
+    my_bar.progress(80,text=progress_text)
+    st.session_state.messages.append({"role": "Psychotherapist", "content": new_msg})
+    my_bar.progress(90,text=progress_text)
     st.session_state.conversations.append({"role": "Psychotherapist", "content": new_msg})
     my_bar.progress(100,text=progress_text)
     time.sleep(1)
