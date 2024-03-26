@@ -97,8 +97,7 @@ if prompt := st.chat_input():
         
         '''
         **What should I consider for the best answer**: 
-        [Write down what you need to consider for the best answer
-        - If you get a very short answer from the mental patient, ask him/her a related question, but don't directly ask how he/she feel.]
+        [If you get a very short answer from the mental patient, ask him/her a related question, but don't directly ask how he/she feel.]
 
         **Summary of the conversation**: [{st.session_state.message_summary}]
         **Conversation content**: [{st.session_state.conversations}]
