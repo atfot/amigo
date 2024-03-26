@@ -105,7 +105,7 @@ if prompt := st.chat_input():
           [Show me what is the important things that you need to consider for choosing the best response]
 
           **Best response**: 
-          [From the "Three psychotherapist's responses" you wrote above, pick the best one and write it down. 
+          [From the "**Three possible answers from a psychotherapist**:" you wrote above, pick the best one and write it down. 
           - It should be **sentences** covered with quotes.]
           '''
 
