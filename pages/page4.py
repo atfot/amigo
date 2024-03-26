@@ -104,7 +104,7 @@ if prompt := st.chat_input():
         [Given the above conversation, what are the 3 correct responses from the psychotherapist? If you get a very short answer, ask the mental patient a question related to him/her.]
 
         **Best response**: 
-        [From the "**Three possible answers from a psychotherapist**:" you wrote above, pick the best one and write it down. It should be **sentences** covered with quotes.]
+        [Pick the best one from the "**Three possible answers from a psychotherapist**:" and write it down. It should be **sentences** covered with quotes.]
 
         **Why the best response was chosen**: 
         [Why the response selected in **Best response** is the most correct response]
