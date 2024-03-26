@@ -163,7 +163,7 @@ Please only show the sentences from the '**Best response**:' section of what I p
       st.session_state.conversations.append({"role": "Psychotherapist", "content": new_msg})
       st.chat_message("assistant").write(new_msg)
       st.write(user_prompt_1)
-      st.chat_message("assistant").write(msg)
+      st.write(msg)
       st.write(len(st.session_state.messages))
       st.write(st.session_state.messages)
       st.write(st.session_state.conversations)
