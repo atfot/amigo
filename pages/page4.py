@@ -97,7 +97,7 @@ if prompt := st.chat_input():
           **Summary of the conversation**: [{st.session_state.message_summary}]
           **Conversation content**: [{st.session_state.conversations}]
 
-          **Three psychotherapist's responses**: 
+          **Three possible answers from a psychotherapist**: 
           [Given the above conversation, what are the 3 correct responses from the psychotherapist? 
           - If you have to give a very short answer, you can ask the mental patient a question related to him.]
 
