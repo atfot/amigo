@@ -2,7 +2,6 @@ from openai import OpenAI
 import streamlit as st
 from navigation import make_sidebar
 import time
-import re
 
 st.set_page_config(
     page_title="Your AI Therapist, Neri",
@@ -29,7 +28,6 @@ if prompt := st.chat_input():
     st.chat_message("user").write(prompt)
     if len(st.session_state.messages)<6:
        st.session_state['message_summary'] = 'Nothing has been written to date, and the conversation starts below.'
-       st.session_state['conversations'] = st.session_state.messages
     if len(st.session_state.messages)%6==0:
         summary = client.chat.completions.create(
         model="gpt-3.5-turbo-16k",
