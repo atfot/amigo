@@ -14,8 +14,7 @@ st.set_page_config(
 make_sidebar()
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "Psychotherapist", "content": "What's bothering you? Tell me all about it."}]
-if "conversations" not in st.session_state:
-   st.session_state['conversations']=[{"role": "Psychotherapist", "content": "What's bothering you? Tell me all about it."}]
+    st.session_state['conversations']=[{"role": "Psychotherapist", "content": "What's bothering you? Tell me all about it."}]   
 
 for msg in st.session_state.messages:
     if msg['role']=="Psychotherapist":
@@ -161,11 +160,9 @@ Please only show the sentences from the '**Best response**:' section of what I p
       new_msg = sentence_selection.choices[0].message.content.strip('"')
       st.session_state.messages.append({"role": "Psychotherapist", "content": new_msg})
       st.session_state.conversations.append({"role": "Psychotherapist", "content": new_msg})
+      st.chat_message("assistant").write(msg)
       st.chat_message("assistant").write(new_msg)
       st.write(user_prompt_1)
-      st.chat_message("assistant").write(msg)
       st.write(len(st.session_state.messages))
       st.write(st.session_state.messages)
       st.write(st.session_state.conversations)
-      
-        
