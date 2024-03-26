@@ -49,7 +49,10 @@ if prompt := st.chat_input():
         )
         st.session_state['message_summary'] = summary.choices[0].message.content
         st.session_state['conversations'] = st.session_state.messages[-3:]
-    with st.spinner('thinking...'):
+    progress_text='thinking...'
+    my_bar=st.progress(0,text=progress_text)
+    for percent_complete in range(100):
+      time.sleep(0.01)
       system_prompt=f"""```
         # Primary Assistant Guidance
         Your goal is to help me, the playwright, write a script for a play. Let's go step-by-step:
@@ -88,6 +91,7 @@ if prompt := st.chat_input():
         '''
         ```
     """
+      my_bar.progress(percent_complete+15,text=progress_text)
       user_prompt_1=f"""
           ```
           # My requests
@@ -114,6 +118,7 @@ if prompt := st.chat_input():
           - **DO NOT USE LINE BREAKS OR SPACES** that are not depicted in the form below.
           ```
       """
+      my_bar.progress(percent_complete+15,text=progress_text)
       response = client.chat.completions.create(
     model="gpt-3.5-turbo-16k",
     messages=[
@@ -132,7 +137,7 @@ if prompt := st.chat_input():
     frequency_penalty=0.9,
     presence_penalty=0.9
   )
-      time.sleep(1)
+      my_bar.progress(percent_complete+25,text=progress_text)
       msg = response.choices[0].message.content
       sentence_selection = client.chat.completions.create(
     model="gpt-3.5-turbo-16k",
@@ -159,11 +164,14 @@ Please only show the sentences from the '**Best response**:' section of what I p
     frequency_penalty=0,
     presence_penalty=0
   )
-      
+      my_bar.progress(percent_complete+25,text=progress_text)
       new_msg = sentence_selection.choices[0].message.content.strip('"')
       st.session_state.messages.append({"role": "Psychotherapist", "content": new_msg})
       st.session_state.conversations.append({"role": "Psychotherapist", "content": new_msg})
-      st.chat_message("assistant").write(new_msg)
+      my_bar.progress(percent_complete+20,text=progress_text)
+    time.sleep(1)
+    my_bar.empty()
+    st.chat_message("assistant").write(new_msg)
       #st.chat_message("assistant").write(msg)
       #st.write(user_prompt_1)
       #st.write(len(st.session_state.messages))
