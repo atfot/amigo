@@ -96,14 +96,11 @@ if prompt := st.chat_input():
         - Please read the form below carefully and answer the questions in the exact format below.
         
         '''
-        **What should I consider for the best answer**: 
-        [If you get a very short answer from the mental patient, ask him/her a related question, but don't directly ask how he/she feel.]
-
         **Summary of the conversation**: [{st.session_state.message_summary}]
         **Conversation content**: [{st.session_state.conversations}]
 
         **Three possible answers from a psychotherapist**: 
-        [Given the above conversation, what are the 3 correct responses from the psychotherapist?]
+        [Given the above conversation, what are the 3 correct responses from the psychotherapist? If you get a very short answer from the mental patient, ask him/her a related question, but don't directly ask how he/she feel.]
 
         **Best response**: 
         [Pick the best one from the "**Three possible answers from a psychotherapist**:" and write it down. It should be **sentences** covered with quotes.]
