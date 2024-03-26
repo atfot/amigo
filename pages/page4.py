@@ -98,7 +98,7 @@ if prompt := st.chat_input():
           **Conversation content**: [{st.session_state.conversations}]
 
           **Three psychotherapist's responses**: 
-          [Given the above conversation, what are the 3 correct responses from the psychotherapist?]
+          [Given the above conversation, what are the 3 correct responses from the psychotherapist? If you have to give a very short answer, ask the mental patient a question related to him.]
 
           **What should you consider for the best response**: 
           [Show me what is the important things that you need to consider for choosing the best response]
@@ -110,7 +110,6 @@ if prompt := st.chat_input():
           **REMEMBER**: 
           - Use this form below. 
           - **DO NOT USE LINE BREAKS OR SPACES** that are not depicted in the form below.
-          - If you have to give a very short answer, ask the mental patient a question related to him.
           ```
       """
       response = client.chat.completions.create(
