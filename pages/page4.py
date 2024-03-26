@@ -98,7 +98,8 @@ if prompt := st.chat_input():
           **Conversation content**: [{st.session_state.conversations}]
 
           **Three psychotherapist's responses**: 
-          [Given the above conversation, what are the 3 correct responses from the psychotherapist? If you have to give a very short answer, ask the mental patient a question related to him. However, if the mental patient clearly doesn't want to hear the question, stop asking.]
+          [Given the above conversation, what are the 3 correct responses from the psychotherapist? 
+          - If you have to give a very short answer, ask the mental patient a question related to him. However, if the mental patient clearly doesn't want to hear the question, stop asking.]
 
           **What should you consider for the best response**: 
           [Show me what is the important things that you need to consider for choosing the best response]
