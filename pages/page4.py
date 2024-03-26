@@ -87,6 +87,9 @@ if prompt := st.chat_input():
       - The psychotherapist is talking to only one person with a mental illness(Check the "# Character information")
       - Make sure you understand the content of "# Information about the play" and "# Character information" before answering
       '''
+
+      **Summary of the conversation**: [{st.session_state.message_summary}]
+      **Conversation content**: [{st.session_state.conversations}]
       ```
   """
     my_bar.progress(10,text=progress_text)
