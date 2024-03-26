@@ -84,7 +84,6 @@ if prompt := st.chat_input():
       - Keep in mind that the psychotherapist's response is part of the conversation and will be followed by the mentally ill person's response
       - The psychotherapist's response should fit the tone and content of the conversation
       - If mental patient's reply is too short, you need to ask some questions to understand what is going on inside his/her mind
-      - If you get a very short answer from the mental patient, ask him/her a related question, but don't directly ask how he/she feel.
       - The psychotherapist is talking to only one person with a mental illness(Check the "# Character information")
       - Make sure you understand the content of "# Information about the play" and "# Character information" before answering
       '''
@@ -98,13 +97,14 @@ if prompt := st.chat_input():
         
         '''
         **What should I consider for the best answer**: 
-        [Write down what you need to consider for the best answer]
+        [Write down what you need to consider for the best answer
+        - If you get a very short answer from the mental patient, ask him/her a related question, but don't directly ask how he/she feel.]
 
         **Summary of the conversation**: [{st.session_state.message_summary}]
         **Conversation content**: [{st.session_state.conversations}]
 
         **Three possible answers from a psychotherapist**: 
-        [Given the above conversation, what are the 3 correct responses from the psychotherapist? ]
+        [Given the above conversation, what are the 3 correct responses from the psychotherapist?]
 
         **Best response**: 
         [Pick the best one from the "**Three possible answers from a psychotherapist**:" and write it down. It should be **sentences** covered with quotes.]
@@ -148,7 +148,7 @@ if prompt := st.chat_input():
       "role": "user",
       "content": f"""
 Please only show the sentences from the '**Best response**:' section of what I provided below, with the quotes, or "" removed.
--  Keep in mind that you should not seek answers from the "**Why the best response was chosen**:" part. 
+-  Keep in mind that you should not seek answers from the "**What should I consider for the best answer**:" part. 
 - Submit only **sentences** as output.
 
 {msg}
