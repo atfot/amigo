@@ -99,7 +99,7 @@ if prompt := st.chat_input():
 
           **Three psychotherapist's responses**: 
           [Given the above conversation, what are the 3 correct responses from the psychotherapist? 
-          - If you have to give a very short answer, ask the mental patient a question related to him. However, if the mental patient says that he/she doesn't want to hear the question from the pyschotherapist, stop asking.]
+          - If you have to give a very short answer, you can ask the mental patient a question related to him.]
 
           **What should you consider for the best response**: 
           [Show me what is the important things that you need to consider for choosing the best response]
