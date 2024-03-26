@@ -100,7 +100,7 @@ if prompt := st.chat_input():
         **Conversation content**: [{st.session_state.conversations}]
 
         **Three possible answers from a psychotherapist**: 
-        [Given the above conversation, what are the 3 correct responses from the psychotherapist? **If you get a very short answer from the mental patient, ask him/her a related question.**]
+        [Given the above conversation, what are the 3 correct responses from the psychotherapist? **If you get a very short answer from the mental patient, ask him/her a related question, but don't ask how he/she feel.**]
 
         **Best response**: 
         [Pick the best one from the "**Three possible answers from a psychotherapist**:" and write it down. It should be **sentences** covered with quotes.]
