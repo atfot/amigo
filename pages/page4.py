@@ -14,6 +14,8 @@ st.set_page_config(
 make_sidebar()
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "Psychotherapist", "content": "What's bothering you? Tell me all about it."}]
+if "conversations" not in st.session_state:
+   st.session_state['conversations']=[{"role": "Psychotherapist", "content": "What's bothering you? Tell me all about it."}]
 
 for msg in st.session_state.messages:
     if msg['role']=="Psychotherapist":
