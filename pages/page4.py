@@ -94,7 +94,12 @@ if prompt := st.chat_input():
         ```
         # My requests
         - Please read the form below carefully and answer the questions in the exact format below.
-        
+
+        **THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**: 
+        - Use this form below. 
+        - **DO NOT USE LINE BREAKS OR SPACES** that are not depicted in the form below.
+        - If you get a very short answer from the mental patient, ask him/her a related question, but don't directly ask how he/she feel.
+
         '''
         **Summary of the conversation**: [{st.session_state.message_summary}]
         **Conversation content**: [{st.session_state.conversations}]
@@ -105,11 +110,6 @@ if prompt := st.chat_input():
         **Best response**: 
         [Pick the best one from the "**Three possible answers from a psychotherapist**:" and write it down. It should be **sentences** covered with quotes.]
         '''
-
-        **REMEMBER**: 
-        - Use this form below. 
-        - **DO NOT USE LINE BREAKS OR SPACES** that are not depicted in the form below.
-        - If you get a very short answer from the mental patient, ask him/her a related question, but don't directly ask how he/she feel.
         ```
     """
     my_bar.progress(20,text=progress_text)
