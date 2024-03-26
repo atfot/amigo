@@ -110,6 +110,7 @@ if prompt := st.chat_input():
           **REMEMBER**: 
           - Use this form below. 
           - **DO NOT USE LINE BREAKS OR SPACES** that are not depicted in the form below.
+          - If you have to give a very short answer, ask the mental patient a question related to him.
           ```
       """
       response = client.chat.completions.create(
@@ -128,7 +129,7 @@ if prompt := st.chat_input():
     max_tokens=512,
     top_p=0.8,
     frequency_penalty=0.9,
-    presence_penalty=0.8
+    presence_penalty=0.9
   )
       time.sleep(1)
       msg = response.choices[0].message.content
@@ -158,8 +159,8 @@ Please only show the sentences from the '**Best response**:' section of what I p
       new_msg = sentence_selection.choices[0].message.content.strip('"')
       st.session_state.messages.append({"role": "Psychotherapist", "content": new_msg})
       st.session_state.conversations.append({"role": "Psychotherapist", "content": new_msg})
-      st.chat_message("assistant").write(msg)
       st.chat_message("assistant").write(new_msg)
+      st.chat_message("assistant").write(msg)
       st.write(user_prompt_1)
       st.write(len(st.session_state.messages))
       st.write(st.session_state.messages)
