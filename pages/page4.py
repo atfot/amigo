@@ -91,6 +91,7 @@ if prompt := st.chat_input():
       ```
   """
     my_bar.progress(10,text=progress_text)
+    time.sleep(0.01)
     user_prompt_1=f"""
         ```
         # My requests
@@ -116,6 +117,7 @@ if prompt := st.chat_input():
         ```
     """
     my_bar.progress(20,text=progress_text)
+    time.sleep(0.01)
     response = client.chat.completions.create(
   model="gpt-3.5-turbo-16k",
   messages=[
@@ -135,6 +137,7 @@ if prompt := st.chat_input():
   presence_penalty=0.8
 )
     my_bar.progress(40,text=progress_text)
+    time.sleep(0.01)
     msg = response.choices[0].message.content
     my_bar.progress(50,text=progress_text)
     sentence_selection = client.chat.completions.create(
@@ -162,10 +165,13 @@ Please only show the sentences from the '**Best response**:' section of what I p
   presence_penalty=0
 )
     my_bar.progress(70,text=progress_text)
+    time.sleep(0.01)
     new_msg = sentence_selection.choices[0].message.content.strip('"')
     my_bar.progress(80,text=progress_text)
+    time.sleep(0.01)
     st.session_state.messages.append({"role": "Psychotherapist", "content": new_msg})
     my_bar.progress(90,text=progress_text)
+    time.sleep(0.01)
     st.session_state.conversations.append({"role": "Psychotherapist", "content": new_msg})
     my_bar.progress(100,text=progress_text)
     time.sleep(1)
