@@ -100,7 +100,7 @@ if prompt := st.chat_input():
         **Conversation content**: [{st.session_state.conversations}]
 
         **Three possible answers from a psychotherapist**: 
-        [Given the above conversation, what are the 3 correct responses from the psychotherapist? If you get a very short answer from the mental patient, ask him/her a related question, but don't directly ask how he/she feel.]
+        [Given the above conversation, what are the 3 correct responses from the psychotherapist?]
 
         **Best response**: 
         [Pick the best one from the "**Three possible answers from a psychotherapist**:" and write it down. It should be **sentences** covered with quotes.]
@@ -109,6 +109,7 @@ if prompt := st.chat_input():
         **REMEMBER**: 
         - Use this form below. 
         - **DO NOT USE LINE BREAKS OR SPACES** that are not depicted in the form below.
+        - If you get a very short answer from the mental patient, ask him/her a related question, but don't directly ask how he/she feel.
         ```
     """
     my_bar.progress(20,text=progress_text)
