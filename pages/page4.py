@@ -171,7 +171,7 @@ Please only show the sentences from the '**Best response**:' section of what I p
     my_bar.empty()
     st.chat_message("assistant").write(new_msg)
     st.chat_message("assistant").write(msg)
-    st.write(user_prompt_1)
+    st.chat_message("assistant").write(user_prompt_1)
     st.write(len(st.session_state.messages))
     st.write(st.session_state.messages)
     st.write(st.session_state.conversations)
