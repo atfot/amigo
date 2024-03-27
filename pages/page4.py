@@ -96,7 +96,7 @@ if prompt := st.chat_input():
         - Please read the form below carefully and answer the questions in the exact format below.
 
         **THINGS YOU NEED TO REMEMBER BEFORE THE ANSWER**: 
-        - Use this form to answer.
+        - Write down and use this form to answer.
         - **DO NOT USE LINE BREAKS OR SPACES** that are not depicted in the form below.
 
         '''
