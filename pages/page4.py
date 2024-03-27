@@ -155,7 +155,7 @@ Please only show the sentences from the '**Best response**:' section of what I p
     }
   ],
   temperature=0.1,
-  max_tokens=2048,
+  max_tokens=512,
   top_p=1,
   frequency_penalty=0,
   presence_penalty=0
